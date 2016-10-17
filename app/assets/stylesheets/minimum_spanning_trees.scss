@@ -106,3 +106,15 @@
   margin-bottom: 20px;
 }
 
+.index-buttons {
+  text-align: center;
+  position: relative;
+  width: 100%;
+}
+
+.index-button-right {
+  position: absolute;
+  padding: 7px;
+  right: 0;
+  margin: 20px 0;
+}

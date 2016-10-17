@@ -11,7 +11,7 @@ class MinimumSpanningTreesController < ApplicationController
   # GET /minimum_spanning_trees
   # GET /minimum_spanning_trees.json
   def index
-    @minimum_spanning_trees = MinimumSpanningTree.all
+    @minimum_spanning_trees = MinimumSpanningTree.all.paginate(:page => params[:page], :per_page => 20)
   end
 
   # GET /minimum_spanning_trees/1

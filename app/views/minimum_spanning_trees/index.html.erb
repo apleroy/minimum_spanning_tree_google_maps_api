@@ -1,8 +1,11 @@
 <div class="marketing">
 
-  <%= link_to 'New Minimum spanning tree', new_minimum_spanning_tree_path, class: "btn btn-success" %>
+  <div class="index-buttons">
+    <%= link_to 'New Minimum spanning tree', new_minimum_spanning_tree_path, class: "btn btn-success index-button-right" %>
 
-  <hr class="featurette-divider">
+    <%= will_paginate @minimum_spanning_trees, renderer: BootstrapPagination::Rails %>
+  </div>
+
 
   <div class="row featurette">
 
