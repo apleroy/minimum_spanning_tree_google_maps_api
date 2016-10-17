@@ -1,0 +1,62 @@
+<p id="notice"><%= notice %></p>
+
+<div class="marketing">
+
+  <hr class="featurette-divider">
+
+  <div class="row featurette">
+    <div class="col-md-7">
+      <div class="column-header">
+        <div class="direction-step">
+          1
+        </div>
+        <p class="lead">
+          This Map marks the Minimum Spanning Tree of the Locations Selected
+        </p>
+      </div>
+      <input id="pac-input" class="controls" type="text"
+             placeholder="Enter a location" style="display: none">
+      <div class="map_outer">
+        <div id="map"></div>
+      </div>
+    </div>
+    <div class="col-md-5 locations-container">
+      <div class="column-header">
+        <div class="direction-step">
+          2
+        </div>
+        <p class="lead">
+          Below are all Edges of Your Minimum Spanning Tree
+        </p>
+      </div>
+      <ul id="mst-input-list" class="list-group">
+        <% @mst_edges.each do |edge| %>
+            <li class="list-group-item">
+              <%= edge.node1.name %> > <%= edge.node2.name %>
+
+            </li>
+        <% end %>
+
+      </ul>
+
+
+
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+</div>
+
+
+<%#= @minimum_spanning_tree.api_call %>
+
+
+<%= link_to 'Edit', edit_minimum_spanning_tree_path(@minimum_spanning_tree) %> |
+<%= link_to 'Back', minimum_spanning_trees_path %>
+
+<script>
+  $mst_edges = <%= raw @mst_edges.to_json %>;
+
+
+</script>
+<script src="<%= @endpoint %>" defer></script>

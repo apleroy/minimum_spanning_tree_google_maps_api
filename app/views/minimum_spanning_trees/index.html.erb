@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Minimum Spanning Trees</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @minimum_spanning_trees.each do |minimum_spanning_tree| %>
+      <tr>
+        <td><%= minimum_spanning_tree.name %></td>
+        <td><%= link_to 'Show', minimum_spanning_tree %></td>
+        <td><%= link_to 'Edit', edit_minimum_spanning_tree_path(minimum_spanning_tree) %></td>
+        <td><%= link_to 'Destroy', minimum_spanning_tree, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Minimum spanning tree', new_minimum_spanning_tree_path %>

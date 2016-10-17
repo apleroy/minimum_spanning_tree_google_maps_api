@@ -1,0 +1,47 @@
+
+<div class="marketing">
+
+  <hr class="featurette-divider">
+
+  <div class="row featurette">
+    <div class="col-md-7">
+      <div class="column-header">
+      <div class="direction-step">
+        1
+      </div>
+      <p class="lead">
+        Enter a location in the map below.  Select 'Add to List' to add this location to your minimum spanning tree.
+      </p>
+      </div>
+      <input id="pac-input" class="controls" type="text"
+             placeholder="Enter a location">
+      <div class="map_outer">
+        <div id="map"></div>
+      </div>
+    </div>
+    <div class="col-md-5 locations-container">
+      <div class="column-header">
+      <div class="direction-step">
+        2
+      </div>
+      <p class="lead">
+        Input a name for your tree.  Selected locations will appear below.
+      </p>
+      </div>
+      <%= render 'form' %>
+
+
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <%= link_to 'Back', minimum_spanning_trees_path %>
+
+</div>
+<script>
+  $mst_edges = [];
+</script>
+<script src="<%= @endpoint %>" async defer></script>
+
+

@@ -1,0 +1,42 @@
+<%= form_for @minimum_spanning_tree, html: { id: "minimum_spanning_tree_form", class: "form-group" } do |f| %>
+  <% if @minimum_spanning_tree.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@minimum_spanning_tree.errors.count, "error") %> prohibited this minimum_spanning_tree from being saved:</h2>
+
+      <ul>
+      <% @minimum_spanning_tree.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.text_field :name, placeholder: "Input a name for your minimum spanning tree", class: "form-control mst-name-input"%>
+  </div>
+
+    <div class="panel panel-default empty-location-holder js-empty-location-holder">
+      <div class="panel-body">
+      <p class="lead">
+        <span class="text-muted">
+          Your selected locations will appear here.
+        </span>
+      </p>
+      </div>
+    </div>
+    <div class="location-list">
+      <ul id="mst-input-list" class="list-group">
+
+      </ul>
+    </div>
+
+
+    <% @minimum_spanning_tree.places.each do |place| %>
+        <%= f.hidden_field :place_names, :multiple => true , :value => place.name  %>
+    <% end %>
+
+
+    <div class="actions">
+      <%= f.submit "Caclulate my Minimum Spanning Tree", class: "btn btn-success" %>
+    </div>
+<% end %>

@@ -1,0 +1,2 @@
+module MinimumSpanningTreesHelper
+end

@@ -1,0 +1,30 @@
+<h1>Editing Minimum Spanning Tree</h1>
+
+<input id="pac-input" class="controls" type="text"
+       placeholder="Enter a location">
+
+<div class="row">
+  <div class="col-md-8">
+    <div class="andy">
+      <div id="map"></div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="location-list">
+      <ul id="mst-input-list" class="list-group">
+        <% @minimum_spanning_tree.places.each do |place| %>
+            <li class="list-group-item location-address" role="alert">
+              <button type="button" class="close delete-place" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <div class="address-input"><%= place.name %></div>
+            </li>
+        <% end %>
+
+      </ul>
+    </div>
+  </div>
+</div>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @minimum_spanning_tree %> |
+<%= link_to 'Back', minimum_spanning_trees_path %>
