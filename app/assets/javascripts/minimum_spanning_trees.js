@@ -123,11 +123,13 @@ function initMap() {
     // ---------------------------
 
     bounds = plotEdges(map);
-    map.fitBounds(bounds);
-    var listener = google.maps.event.addListener(map, "idle", function() {
-        if (map.getZoom() > 16) map.setZoom(16);
-        google.maps.event.removeListener(listener);
-    });
+    if (bounds.length > 0) {
+        map.fitBounds(bounds);
+        var listener = google.maps.event.addListener(map, "idle", function () {
+            if (map.getZoom() > 16) map.setZoom(16);
+            google.maps.event.removeListener(listener);
+        });
+    }
 }
 
 function calculateAndDisplayRoute(directionsService, directionsDisplay, origin, destination, map, markers) {
@@ -148,7 +150,6 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay, origin, 
         }
     });
 
-    //console.log(markers);
     return markers;
 }
 
@@ -185,7 +186,6 @@ function plotEdges(map) {
 
     }
 
-    console.log("end markers:" + markers);
     var bounds = new google.maps.LatLngBounds();
     for (var i = 0; i < markers.length; i++) {
         bounds.extend(markers[i].position);

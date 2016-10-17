@@ -1,30 +1,47 @@
-<h1>Editing Minimum Spanning Tree</h1>
+<div class="marketing">
 
-<input id="pac-input" class="controls" type="text"
-       placeholder="Enter a location">
+  <hr class="featurette-divider">
 
-<div class="row">
-  <div class="col-md-8">
-    <div class="andy">
-      <div id="map"></div>
+  <div class="row featurette">
+    <div class="col-md-7">
+      <div class="column-header">
+        <div class="direction-step">
+          1
+        </div>
+        <p class="lead">
+          Enter a location in the map below.  Select 'Add to List' to add this location to your minimum spanning tree.
+        </p>
+      </div>
+      <input id="pac-input" class="controls" type="text"
+             placeholder="Enter a location">
+      <div class="map_outer">
+        <div id="map"></div>
+      </div>
+    </div>
+    <div class="col-md-5 locations-container">
+      <div class="column-header">
+        <div class="direction-step">
+          2
+        </div>
+        <p class="lead">
+          Input a name for your tree.  Selected locations will appear below.
+        </p>
+      </div>
+      <%= render 'form' %>
+
+
     </div>
   </div>
-  <div class="col-md-4">
-    <div class="location-list">
-      <ul id="mst-input-list" class="list-group">
-        <% @minimum_spanning_tree.places.each do |place| %>
-            <li class="list-group-item location-address" role="alert">
-              <button type="button" class="close delete-place" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <div class="address-input"><%= place.name %></div>
-            </li>
-        <% end %>
 
-      </ul>
-    </div>
-  </div>
+  <hr class="featurette-divider">
+
+  <%= link_to 'Back', minimum_spanning_trees_path %>
+
 </div>
+<script>
+  $mst_edges = <%= raw @mst_edges.to_json %>;
+</script>
+<script src="<%= @endpoint %>" async defer></script>
 
-<%= render 'form' %>
 
-<%= link_to 'Show', @minimum_spanning_tree %> |
-<%= link_to 'Back', minimum_spanning_trees_path %>
+

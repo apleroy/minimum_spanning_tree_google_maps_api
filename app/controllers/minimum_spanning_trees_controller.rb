@@ -4,6 +4,10 @@ class MinimumSpanningTreesController < ApplicationController
   require 'rest-client'
   require 'json'
 
+  Url = "https://maps.googleapis.com/maps/api/js?key="
+  CallbackMethod = "initMap"
+  Key = ENV['GOOGLE_MAPS']
+
   # GET /minimum_spanning_trees
   # GET /minimum_spanning_trees.json
   def index
@@ -16,27 +20,25 @@ class MinimumSpanningTreesController < ApplicationController
     graph = @minimum_spanning_tree.graph
     graph.print_graph
     @mst_edges = graph.minimum_spanning_tree
-    #@response = JSON.parse(RestClient.get(@minimum_spanning_tree.api_call))
 
-    url = "https://maps.googleapis.com/maps/api/js?key="
-    callbackMethod = "initMap"
-    key = ENV['GOOGLE_MAPS']
-    @endpoint = url + key + "&libraries=places&callback=" + callbackMethod
+    @endpoint = Url + Key + "&libraries=places&callback=" + CallbackMethod
 
-    @andy = "andy alert";
   end
 
   # GET /minimum_spanning_trees/new
   def new
     @minimum_spanning_tree = MinimumSpanningTree.new
-    url = "https://maps.googleapis.com/maps/api/js?key="
-    callbackMethod = "initMap"
-    key = ENV['GOOGLE_MAPS']
-    @endpoint = url + key + "&libraries=places&callback=" + callbackMethod
+
+    @endpoint = Url + Key + "&libraries=places&callback=" + CallbackMethod
   end
 
   # GET /minimum_spanning_trees/1/edit
   def edit
+    graph = @minimum_spanning_tree.graph
+    graph.print_graph
+    @mst_edges = graph.minimum_spanning_tree
+
+    @endpoint = Url + Key + "&libraries=places&callback=" + CallbackMethod
   end
 
   # POST /minimum_spanning_trees

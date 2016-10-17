@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 <div class="marketing">
 
@@ -39,7 +38,7 @@
 
       </ul>
 
-
+      <%= link_to 'Edit Minimum Spanning Tree', edit_minimum_spanning_tree_path(@minimum_spanning_tree), class: "btn btn-success" %>
 
     </div>
   </div>
@@ -47,12 +46,6 @@
   <hr class="featurette-divider">
 </div>
 
-
-<%#= @minimum_spanning_tree.api_call %>
-
-
-<%= link_to 'Edit', edit_minimum_spanning_tree_path(@minimum_spanning_tree) %> |
-<%= link_to 'Back', minimum_spanning_trees_path %>
 
 <script>
   $mst_edges = <%= raw @mst_edges.to_json %>;

@@ -1,27 +1,34 @@
-<p id="notice"><%= notice %></p>
+<div class="marketing">
+
+  <%= link_to 'New Minimum spanning tree', new_minimum_spanning_tree_path, class: "btn btn-success" %>
+
+  <hr class="featurette-divider">
+
+  <div class="row featurette">
+
+    <div class= col-md-12>
+
+      <ul class="list-group">
+        <% @minimum_spanning_trees.each do |minimum_spanning_tree| %>
+            <li class="list-group-item">
+              <%= minimum_spanning_tree.name %>
+              <div class="rails-index-select"><%= link_to 'Destroy', minimum_spanning_tree, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+              <div class="rails-index-select"><%= link_to 'Edit', edit_minimum_spanning_tree_path(minimum_spanning_tree) %></div>
+              <div class="rails-index-select"><%= link_to 'Show', minimum_spanning_tree %></div>
+            </li>
+
+        <% end %>
+
+      </ul>
+
+    </div>
+
+
+    </div>
+
+  </div>
 
 <h1>Listing Minimum Spanning Trees</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @minimum_spanning_trees.each do |minimum_spanning_tree| %>
-      <tr>
-        <td><%= minimum_spanning_tree.name %></td>
-        <td><%= link_to 'Show', minimum_spanning_tree %></td>
-        <td><%= link_to 'Edit', edit_minimum_spanning_tree_path(minimum_spanning_tree) %></td>
-        <td><%= link_to 'Destroy', minimum_spanning_tree, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
-
-<%= link_to 'New Minimum spanning tree', new_minimum_spanning_tree_path %>

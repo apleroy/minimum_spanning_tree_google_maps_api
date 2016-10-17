@@ -34,13 +34,6 @@ class Graph
       excluded_nodes.delete(node)
     end
 
-    ordered_route = []
-    ordered_route << included_edges.first.node1
-    included_edges.each do |edge|
-      puts "(edge)" + edge.node1.name.to_s + " -> " + edge.node2.name.to_s + "(" + edge.weight.to_s + ")"
-      ordered_route << edge.node2
-    end
-
     return included_edges
 
   end
