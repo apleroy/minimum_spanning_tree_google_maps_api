@@ -28,7 +28,7 @@ class MinimumSpanningTreesController < ApplicationController
   # GET /minimum_spanning_trees/new
   def new
     @minimum_spanning_tree = MinimumSpanningTree.new
-
+    puts Key
     @endpoint = Url + Key + "&libraries=places&callback=" + CallbackMethod
   end
 
