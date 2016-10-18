@@ -1,4 +1,4 @@
-class Graph
+class GraphInitial
 
   attr_accessor :nodes
   attr_accessor :edges
@@ -23,8 +23,7 @@ class Graph
     included_edges = []
     included_nodes << excluded_nodes.pop # randomly add first node to set
 
-
-    # while there are nodes not yet in the set
+    # while there are
     while excluded_nodes.count > 0
       #find the min edge connecting included to excluded
       #add the 'from' node of that edge to the included nodes (remove it from the excluded nodes)

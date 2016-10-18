@@ -19,7 +19,7 @@ class MinimumSpanningTree < ActiveRecord::Base
           puts "here"
           return
         else
-          distance = element['distance']['value'].to_i / 1760
+          distance = element['distance']['value'].to_i
           if distance > 1
             graph.add_edge(from, to, distance)
           end
