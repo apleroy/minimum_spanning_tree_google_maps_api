@@ -1,30 +1,33 @@
 class MinimumSpanningTree < ActiveRecord::Base
   require 'rest-client'
-  include HTTParty
   require 'json'
   attr_accessor :place_names
   has_many :places
 
+  INT_MAX = 9999999
 
   def graph
+    graph = Graph.new
     api_response = JSON.parse(RestClient.get(api_call))
-    puts api_response
-    graph = Graph.new(self.places)
+
+    self.places.each do |place|
+      node = Node.new(place)
+      graph.add_node(node)
+    end
 
     self.places.each_with_index do |place, index|
-      from = place
+      node_from = graph.find_node_by_name(place.name)
+
       api_response['rows'][index]['elements'].each_with_index do |element, i|
-        to = self.places[i]
-        if element.nil?
-          puts "here"
-          return
-        else
+        node_to = graph.find_node_by_name(self.places[i].name)
+
           distance = element['distance']['value'].to_i
-          if distance > 1
-            graph.add_edge(from, to, distance)
+          if distance > 1 # don't add self to self
+            graph.add_directed_edge(node_from, node_to, distance) #because this is a matrix with repeats - can use directed edge add
           end
-        end
+
       end
+
     end
 
     return graph
@@ -46,10 +49,9 @@ class MinimumSpanningTree < ActiveRecord::Base
 
 
   def api_call
-    key = 'AIzaSyC_mVy34lYzANe1yn2nemmhv-SeVZWltUE'
+    key = ENV['GOOGLE_MAPS']
     url = 'https://maps.googleapis.com/maps/api/distancematrix/json?'
     api_call = url + 'origins=' + locations + '&destinations=' + locations + '&mode=walking&units=imperial&language=en-US' + '&key=' + key
-    puts api_call
     return api_call
   end
 

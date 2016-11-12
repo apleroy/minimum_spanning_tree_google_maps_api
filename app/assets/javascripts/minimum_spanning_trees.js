@@ -168,8 +168,9 @@ function plotEdges(map) {
     //pass the nodes of the edge to the service
     for (var i = 0; i < $mst_edges.length; i++) {
 
-        var node1 = $mst_edges[i].node1.name;
-        var node2 = $mst_edges[i].node2.name;
+        var node1 = $mst_edges[i].name1;
+        var node2 = $mst_edges[i].name2;
+        console.log("node1: " + node1 + "   node2: " + node2);
 
         var directionsService = new google.maps.DirectionsService;
         var directionsDisplay = new google.maps.DirectionsRenderer({suppressMarkers: true});

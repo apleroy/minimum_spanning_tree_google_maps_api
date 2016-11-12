@@ -1,12 +1,6 @@
 class MinimumSpanningTreesController < ApplicationController
   before_action :set_minimum_spanning_tree, only: [:show, :edit, :update, :destroy]
-
-  require 'rest-client'
-  require 'json'
-
-  Url = "https://maps.googleapis.com/maps/api/js?key="
-  CallbackMethod = "initMap"
-  Key = ENV['GOOGLE_MAPS']
+  before_filter :set_common_variables
 
   # GET /minimum_spanning_trees
   # GET /minimum_spanning_trees.json
@@ -18,27 +12,19 @@ class MinimumSpanningTreesController < ApplicationController
   # GET /minimum_spanning_trees/1.json
   def show
     graph = @minimum_spanning_tree.graph
-    graph.print_graph
-    @mst_edges = graph.minimum_spanning_tree
-
-    @endpoint = Url + Key + "&libraries=places&callback=" + CallbackMethod
-
+    @mst_edges = graph.prim_mst
   end
 
   # GET /minimum_spanning_trees/new
   def new
     @minimum_spanning_tree = MinimumSpanningTree.new
-    puts Key
-    @endpoint = Url + Key + "&libraries=places&callback=" + CallbackMethod
   end
 
   # GET /minimum_spanning_trees/1/edit
   def edit
     graph = @minimum_spanning_tree.graph
     graph.print_graph
-    @mst_edges = graph.minimum_spanning_tree
-
-    @endpoint = Url + Key + "&libraries=places&callback=" + CallbackMethod
+    @mst_edges = graph.prim_mst
   end
 
   # POST /minimum_spanning_trees
@@ -120,5 +106,12 @@ class MinimumSpanningTreesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def minimum_spanning_tree_params
       params.require(:minimum_spanning_tree).permit(:name, :place_names => [])
+    end
+
+    def set_common_variables
+      url = "https://maps.googleapis.com/maps/api/js?key="
+      callback_method = "initMap"
+      key = ENV['GOOGLE_MAPS']
+      @endpoint = url + key + "&libraries=places&callback=" + callback_method
     end
 end

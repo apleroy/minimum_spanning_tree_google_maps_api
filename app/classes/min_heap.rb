@@ -5,14 +5,18 @@ class MinHeap
   # MinHeap has the property that all nodes are larger than their parent
   # smallest element of the minheap is at the root
 
+  attr_accessor :elements, :element_position_map
+
   # initialize an empty array with nil at the 0 index (to make math easier)
   def initialize
     @elements = [nil]
+    @element_position_map = Hash.new
   end
 
   # override add to array method - preserve the min heap property
   def <<(element)
     @elements << element
+    @element_position_map[element.node_data.name] = @elements.size - 1
 
     sift_up(@elements.size - 1)
   end
@@ -38,25 +42,21 @@ class MinHeap
 
   end
 
-  # exchange two elements within the minheap
-  def exchange(source, target)
-    @elements[source], @elements[target] = @elements[target], @elements[source]
-
-  end
-
   # get the minimum value from the heap
   def peek_min
     return @elements[1]
   end
 
   # return the actual elements and re-heapify the minheap
-  def pop
+  def extract_min
 
     # exchange the minimum element with the last one in the list
     exchange(1, @elements.size - 1)
 
     # remove the last element
     min_element = @elements.pop
+    @element_position_map.delete(min_element.node_data.name)
+
 
     # make sure the tree is ordered - call the helper method to sift down the new root node into appropriate position
     sift_down(1)
@@ -65,6 +65,26 @@ class MinHeap
     return min_element
 
   end
+
+
+  def delete_element(element)
+
+    element_position = @element_position_map[element.node_data.name]
+
+    # exchange the minimum element with the last one in the list
+    exchange(element_position, @elements.size - 1)
+
+    # remove the last element
+    min_element = @elements.pop
+    @element_position_map.delete(min_element.node_data.name)
+
+    # make sure the tree is ordered - call the helper method to sift down the new root node into appropriate position
+    sift_down(element_position)
+
+    return min_element
+    #print_heap
+  end
+
 
   def sift_down(index)
 
@@ -90,8 +110,37 @@ class MinHeap
     #exchange the larger index with the smaller child
     exchange(index, child_index)
 
-    #keep sifting down, this time from the farter along child index
+    #keep sifting down, this time from the farther along child index
     sift_down(child_index)
+
+  end
+
+  def print_heap
+    puts "printing min heap"
+    @elements.each do |element|
+      if element.nil?
+        puts " nil "
+      else
+        puts element.node_data.name
+      end
+
+    end
+  end
+
+  # exchange two elements within the minheap
+  def exchange(source_index, target_index)
+
+    tmp_source = @elements[source_index]
+    tmp_target = @elements[target_index]
+
+    source_element_position = @element_position_map[tmp_source.node_data.name]
+    target_element_position = @element_position_map[tmp_target.node_data.name]
+
+    @elements[source_index] = tmp_target
+    @elements[target_index] = tmp_source
+
+    @element_position_map[tmp_source.node_data.name] = target_element_position
+    @element_position_map[tmp_target.node_data.name] = source_element_position
 
   end
 
