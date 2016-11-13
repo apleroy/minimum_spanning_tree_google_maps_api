@@ -16,10 +16,10 @@ class MinimumSpanningTree < ActiveRecord::Base
     end
 
     self.places.each_with_index do |place, index|
-      node_from = graph.find_node_by_name(place.name)
+      node_from = graph.find_node_by_element(place)
 
       api_response['rows'][index]['elements'].each_with_index do |element, i|
-        node_to = graph.find_node_by_name(self.places[i].name)
+        node_to = graph.find_node_by_element(self.places[i])
 
           distance = element['distance']['value'].to_i
           if distance > 1 # don't add self to self

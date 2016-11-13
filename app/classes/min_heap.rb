@@ -16,7 +16,7 @@ class MinHeap
   # override add to array method - preserve the min heap property
   def <<(element)
     @elements << element
-    @element_position_map[element.node_data.name] = @elements.size - 1
+    @element_position_map[element.node_data] = @elements.size - 1
 
     sift_up(@elements.size - 1)
   end
@@ -55,7 +55,7 @@ class MinHeap
 
     # remove the last element
     min_element = @elements.pop
-    @element_position_map.delete(min_element.node_data.name)
+    @element_position_map.delete(min_element.node_data)
 
 
     # make sure the tree is ordered - call the helper method to sift down the new root node into appropriate position
@@ -69,14 +69,14 @@ class MinHeap
 
   def delete_element(element)
 
-    element_position = @element_position_map[element.node_data.name]
+    element_position = @element_position_map[element.node_data]
 
     # exchange the minimum element with the last one in the list
     exchange(element_position, @elements.size - 1)
 
     # remove the last element
     min_element = @elements.pop
-    @element_position_map.delete(min_element.node_data.name)
+    @element_position_map.delete(min_element.node_data)
 
     # make sure the tree is ordered - call the helper method to sift down the new root node into appropriate position
     sift_down(element_position)
@@ -121,7 +121,7 @@ class MinHeap
       if element.nil?
         puts " nil "
       else
-        puts element.node_data.name
+        puts element.node_data
       end
 
     end
@@ -133,14 +133,14 @@ class MinHeap
     tmp_source = @elements[source_index]
     tmp_target = @elements[target_index]
 
-    source_element_position = @element_position_map[tmp_source.node_data.name]
-    target_element_position = @element_position_map[tmp_target.node_data.name]
+    source_element_position = @element_position_map[tmp_source.node_data]
+    target_element_position = @element_position_map[tmp_target.node_data]
 
     @elements[source_index] = tmp_target
     @elements[target_index] = tmp_source
 
-    @element_position_map[tmp_source.node_data.name] = target_element_position
-    @element_position_map[tmp_target.node_data.name] = source_element_position
+    @element_position_map[tmp_source.node_data] = target_element_position
+    @element_position_map[tmp_target.node_data] = source_element_position
 
   end
 

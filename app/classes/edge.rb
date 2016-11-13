@@ -11,7 +11,7 @@ class Edge
   end
 
   def hash_key
-    return @node1.node_data.name.to_s + "->" + @node2.node_data.name.to_s
+    return @node1.node_data.to_s + "->" + @node2.node_data.to_s
   end
 
   def <=>(other)

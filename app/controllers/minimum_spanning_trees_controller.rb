@@ -12,7 +12,12 @@ class MinimumSpanningTreesController < ApplicationController
   # GET /minimum_spanning_trees/1.json
   def show
     graph = @minimum_spanning_tree.graph
-    @mst_edges = graph.prim_mst
+    mst_edges = graph.prim_mst
+    @mst_edges = []
+    mst_edges.each do |edge|
+      mst_edge = MstEdge.new(edge.node1.node_data.name.to_s, edge.node2.node_data.name.to_s, edge.weight)
+      @mst_edges << mst_edge
+    end
   end
 
   # GET /minimum_spanning_trees/new
@@ -23,8 +28,12 @@ class MinimumSpanningTreesController < ApplicationController
   # GET /minimum_spanning_trees/1/edit
   def edit
     graph = @minimum_spanning_tree.graph
-    graph.print_graph
-    @mst_edges = graph.prim_mst
+    mst_edges = graph.prim_mst
+    @mst_edges = []
+    mst_edges.each do |edge|
+      mst_edge = MstEdge.new(edge.node1.node_data.name.to_s, edge.node2.node_data.name.to_s, edge.weight)
+      @mst_edges << mst_edge
+    end
   end
 
   # POST /minimum_spanning_trees

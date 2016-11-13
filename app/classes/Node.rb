@@ -1,6 +1,6 @@
 class Node
 
-  INT_MAX = 999999999999
+  INT_MAX = Float::INFINITY
 
   include Comparable
 
@@ -10,7 +10,6 @@ class Node
     @node_data = node_data # object, name, or identifier of node (a place object)
     @neighbors = [] # this node's neighbor nodes - other place objects
     @edges = [] #this node neighbor edges - edge objects connecting place object to place object
-
     @key = INT_MAX
     @parent = nil
   end

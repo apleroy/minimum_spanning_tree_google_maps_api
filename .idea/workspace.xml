@@ -2,19 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc0b8f70-cdb1-41bc-a5b5-63d9d3a32834" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/classes/Node.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/classes/mst_edge.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/classes/min_heap_spec.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/minimum_spanning_trees.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/minimum_spanning_trees.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/classes/edge.rb" afterPath="$PROJECT_DIR$/app/classes/edge.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/classes/graph.rb" afterPath="$PROJECT_DIR$/app/classes/graph.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/classes/min_heap.rb" afterPath="$PROJECT_DIR$/app/classes/min_heap.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/minimum_spanning_trees_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/minimum_spanning_trees_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/minimum_spanning_tree.rb" afterPath="$PROJECT_DIR$/app/models/minimum_spanning_tree.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/place.rb" afterPath="$PROJECT_DIR$/app/models/place.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/minimum_spanning_trees/show.html.erb" afterPath="$PROJECT_DIR$/app/views/minimum_spanning_trees/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/models/place_spec.rb" afterPath="$PROJECT_DIR$/spec/models/place_spec.rb" />
     </list>
     <ignored path="google_maps_app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,11 +36,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="minimum_spanning_trees_controller.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="minimum_spanning_trees_controller.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/minimum_spanning_trees_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="113" column="30" selection-start-line="113" selection-start-column="6" selection-end-line="113" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.54347825">
+              <caret line="35" column="7" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -58,7 +50,7 @@
         <entry file="file://$PROJECT_DIR$/app/models/minimum_spanning_tree.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -78,7 +70,7 @@
         <entry file="file://$PROJECT_DIR$/app/classes/graph.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="125" column="0" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
+              <caret line="81" column="55" selection-start-line="81" selection-start-column="55" selection-end-line="81" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -98,7 +90,7 @@
         <entry file="file://$PROJECT_DIR$/app/classes/edge.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="13" column="32" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="32" />
+              <caret line="13" column="58" selection-start-line="13" selection-start-column="58" selection-end-line="13" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -118,17 +110,17 @@
         <entry file="file://$PROJECT_DIR$/app/classes/node.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="26" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="26" />
+              <caret line="11" column="96" selection-start-line="11" selection-start-column="96" selection-end-line="11" selection-end-column="96" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="min_heap.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="min_heap.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/classes/min_heap.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.2515528">
-              <caret line="145" column="0" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="127" column="5" selection-start-line="127" selection-start-column="5" selection-end-line="127" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -184,15 +176,15 @@
         <option value="$PROJECT_DIR$/app/classes/Node.rb" />
         <option value="$PROJECT_DIR$/spec/models/place_spec.rb" />
         <option value="$PROJECT_DIR$/spec/classes/min_heap_spec.rb" />
-        <option value="$PROJECT_DIR$/app/classes/node.rb" />
-        <option value="$PROJECT_DIR$/app/classes/min_heap.rb" />
         <option value="$PROJECT_DIR$/app/classes/mst_edge.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/minimum_spanning_trees.js" />
         <option value="$PROJECT_DIR$/app/views/minimum_spanning_trees/show.html.erb" />
-        <option value="$PROJECT_DIR$/app/controllers/minimum_spanning_trees_controller.rb" />
-        <option value="$PROJECT_DIR$/app/models/minimum_spanning_tree.rb" />
-        <option value="$PROJECT_DIR$/app/classes/graph.rb" />
+        <option value="$PROJECT_DIR$/app/classes/min_heap.rb" />
         <option value="$PROJECT_DIR$/app/classes/edge.rb" />
+        <option value="$PROJECT_DIR$/app/models/minimum_spanning_tree.rb" />
+        <option value="$PROJECT_DIR$/app/classes/node.rb" />
+        <option value="$PROJECT_DIR$/app/classes/graph.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/minimum_spanning_trees_controller.rb" />
       </list>
     </option>
   </component>
@@ -927,11 +919,6 @@
           <line>130</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="ruby-line">
-          <url>file://$PROJECT_DIR$/app/classes/graph.rb</url>
-          <line>90</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
@@ -1255,18 +1242,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/minimum_spanning_trees_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/minimum_spanning_trees/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="113" column="30" selection-start-line="113" selection-start-column="6" selection-end-line="113" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/minimum_spanning_tree.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state vertical-scroll-proportion="-18.125">
+          <caret line="29" column="12" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
           <folding />
         </state>
       </provider>
@@ -1274,7 +1253,15 @@
     <entry file="file://$PROJECT_DIR$/app/classes/node.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="26" />
+          <caret line="11" column="96" selection-start-line="11" selection-start-column="96" selection-end-line="11" selection-end-column="96" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/classes/min_heap.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="127" column="5" selection-start-line="127" selection-start-column="5" selection-end-line="127" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -1287,10 +1274,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/minimum_spanning_trees/show.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/classes/edge.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.125">
-          <caret line="29" column="12" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="58" selection-start-line="13" selection-start-column="58" selection-end-line="13" selection-end-column="58" />
           <folding />
         </state>
       </provider>
@@ -1298,23 +1285,23 @@
     <entry file="file://$PROJECT_DIR$/app/classes/graph.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="125" column="0" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
+          <caret line="81" column="55" selection-start-line="81" selection-start-column="55" selection-end-line="81" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/classes/edge.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/minimum_spanning_tree.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="32" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="32" />
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/classes/min_heap.rb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/minimum_spanning_trees_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.2515528">
-          <caret line="145" column="0" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.54347825">
+          <caret line="35" column="7" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
           <folding />
         </state>
       </provider>
