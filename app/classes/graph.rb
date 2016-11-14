@@ -55,6 +55,8 @@ class Graph
       min_heap << node # add node to min_heap (comparable is on key)
     end
 
+    print_graph
+
     # while there are nodes that exist in the excluded set
     # O(n)
     while excluded_nodes.count > 0
@@ -82,6 +84,10 @@ class Graph
   def find_min_edge(min_node, min_heap, excluded_nodes)
     min_edge_weight = INT_MAX
     min_edge_index = nil
+
+    puts "in find min edge"
+    puts min_heap.print_heap
+    puts min_node.node_data.name.to_s
 
     # loop through all of min_node's neighbor nodes
     # get the node that is in the included_nodes that has smallest edge weight

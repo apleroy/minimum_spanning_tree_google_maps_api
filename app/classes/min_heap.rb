@@ -68,21 +68,22 @@ class MinHeap
 
 
   def delete_element(element)
-
     element_position = @element_position_map[element.node_data]
+    
+    unless element_position.nil?
+      # exchange the minimum element with the last one in the list
+      exchange(element_position, @elements.size - 1)
 
-    # exchange the minimum element with the last one in the list
-    exchange(element_position, @elements.size - 1)
+      # remove the last element
+      min_element = @elements.pop
+      @element_position_map.delete(min_element.node_data)
 
-    # remove the last element
-    min_element = @elements.pop
-    @element_position_map.delete(min_element.node_data)
+      # make sure the tree is ordered - call the helper method to sift down the new root node into appropriate position
+      sift_down(element_position)
 
-    # make sure the tree is ordered - call the helper method to sift down the new root node into appropriate position
-    sift_down(element_position)
+      return min_element
+    end
 
-    return min_element
-    #print_heap
   end
 
 
@@ -121,7 +122,7 @@ class MinHeap
       if element.nil?
         puts " nil "
       else
-        puts element.node_data
+        puts element.node_data.name.to_s
       end
 
     end
@@ -129,7 +130,6 @@ class MinHeap
 
   # exchange two elements within the minheap
   def exchange(source_index, target_index)
-
     tmp_source = @elements[source_index]
     tmp_target = @elements[target_index]
 

@@ -18,12 +18,9 @@ class MinimumSpanningTree < ActiveRecord::Base
 
     begin
       rest_client_response = RestClient.get(api_call)
-
-      puts rest_client_response
       api_response = JSON.parse(rest_client_response)
       self.places.each_with_index do |place, index|
         node_from = graph.find_node_by_element(place)
-
         api_response['rows'][index]['elements'].each_with_index do |element, i|
           status = element['status']
           if status == 'OK'
@@ -33,7 +30,7 @@ class MinimumSpanningTree < ActiveRecord::Base
               graph.add_directed_edge(node_from, node_to, distance) #because this is a matrix with repeats - can use directed edge add
             end
           else
-            raise RestClient::Exception
+            raise RestClient::Exception # example would be invalid city to city direction
           end
 
         end
@@ -73,7 +70,6 @@ class MinimumSpanningTree < ActiveRecord::Base
       key = ENV['GOOGLE_MAPS']
       url = 'https://maps.googleapis.com/maps/api/distancematrix/json?'
       api_call = url + 'origins=' + locations + '&destinations=' + locations + '&mode=walking&units=imperial&language=en-US' + '&key=' + key
-      #api_call = 'https://www.invalid_url.com'
       return api_call
     end
 
