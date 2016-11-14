@@ -1,4 +1,5 @@
 
+
 <div class="marketing">
 
   <hr class="featurette-divider">
@@ -10,7 +11,7 @@
           1
         </div>
         <p class="lead">
-          This Map marks the Minimum Spanning Tree of the Locations Selected
+          <b><%= @minimum_spanning_tree.name %></b>  |  This Map marks the Minimum Spanning Tree of the Locations Selected
         </p>
       </div>
       <input id="pac-input" class="controls" type="text"
@@ -29,10 +30,21 @@
         </p>
       </div>
       <ul id="mst-input-list" class="list-group">
+        <% if @mst_edges.count == 0 %>
+            <div class="panel panel-default empty-location-holder js-empty-location-holder">
+              <div class="panel-body">
+                <p class="lead">
+                <span class="text-muted">
+                  There are no edges in this Minimum Spanning Tree.  You must enter at least two locations
+                  for a valid MST.
+                </span>
+                </p>
+              </div>
+            </div>
+        <% end %>
         <% @mst_edges.each do |edge| %>
             <li class="list-group-item">
               <%= edge.name1 %> > <%= edge.name2 %>
-
             </li>
         <% end %>
 

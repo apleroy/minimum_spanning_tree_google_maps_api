@@ -1,18 +1,21 @@
 <%= form_for @minimum_spanning_tree, html: { id: "minimum_spanning_tree_form", class: "form-group" } do |f| %>
-  <% if @minimum_spanning_tree.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@minimum_spanning_tree.errors.count, "error") %> prohibited this minimum_spanning_tree from being saved:</h2>
 
-      <ul>
-      <% @minimum_spanning_tree.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.text_field :name, placeholder: "Input a name for your minimum spanning tree", class: "form-control mst-name-input"%>
+  <div class="form-group field">
+    <% if @minimum_spanning_tree.errors.any? %>
+        <div class="has-error">
+          <p><%= pluralize(@minimum_spanning_tree.errors.count, "error") %> prohibited this Minimum Spanning Tree from being saved:</p>
+
+            <% @minimum_spanning_tree.errors.full_messages.each do |message| %>
+                <label class="control-label"><%= message %></label>
+            <% end %>
+          <%= f.text_field :name, placeholder: "Input a name for your minimum spanning tree", class: "form-control mst-name-input"%>
+        </div>
+
+    <% else %>
+        <%= f.text_field :name, placeholder: "Input a name for your minimum spanning tree", class: "form-control mst-name-input"%>
+    <% end %>
+
   </div>
 
     <div class="panel panel-default empty-location-holder js-empty-location-holder">

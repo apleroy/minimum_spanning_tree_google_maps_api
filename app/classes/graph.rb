@@ -120,20 +120,12 @@ class Graph
     puts "printing graph"
     @node_list.values.each do |node|
       puts "Node (" + node.node_data.name.to_s + ")"
-
       puts "node's neighbors: "
       node.neighbors.each_with_index do |neighbor, index|
         puts neighbor.node_data.name + " edge " + index.to_s + " " + neighbor.edges[index].to_s
       end
-      #node.edges.each do |edge|
-      #  puts edge.to_s
-      #end
-
     end
   end
-
-
-
 
 
 end

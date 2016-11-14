@@ -4,30 +4,49 @@ class MinimumSpanningTree < ActiveRecord::Base
   attr_accessor :place_names
   has_many :places
 
+  validates :name, presence: true
+
   INT_MAX = 9999999
 
   def graph
     graph = Graph.new
-    api_response = JSON.parse(RestClient.get(api_call))
 
     self.places.each do |place|
       node = Node.new(place)
       graph.add_node(node)
     end
 
-    self.places.each_with_index do |place, index|
-      node_from = graph.find_node_by_element(place)
+    begin
+      rest_client_response = RestClient.get(api_call)
 
-      api_response['rows'][index]['elements'].each_with_index do |element, i|
-        node_to = graph.find_node_by_element(self.places[i])
+      puts rest_client_response
+      api_response = JSON.parse(rest_client_response)
+      self.places.each_with_index do |place, index|
+        node_from = graph.find_node_by_element(place)
 
-          distance = element['distance']['value'].to_i
-          if distance > 1 # don't add self to self
-            graph.add_directed_edge(node_from, node_to, distance) #because this is a matrix with repeats - can use directed edge add
+        api_response['rows'][index]['elements'].each_with_index do |element, i|
+          status = element['status']
+          if status == 'OK'
+            node_to = graph.find_node_by_element(self.places[i])
+            distance = element['distance']['value'].to_i
+            if distance > 1 # don't add self to self
+              graph.add_directed_edge(node_from, node_to, distance) #because this is a matrix with repeats - can use directed edge add
+            end
+          else
+            raise RestClient::Exception
           end
 
+        end
       end
-
+    rescue SocketError => socketerror
+      puts socketerror
+      return socketerror
+    rescue RestClient::Exception => restexception
+      puts restexception
+      return restexception
+    rescue Exception => generalexception
+      puts generalexception
+      return generalexception
     end
 
     return graph
@@ -48,12 +67,15 @@ class MinimumSpanningTree < ActiveRecord::Base
   end
 
 
-  def api_call
-    key = ENV['GOOGLE_MAPS']
-    url = 'https://maps.googleapis.com/maps/api/distancematrix/json?'
-    api_call = url + 'origins=' + locations + '&destinations=' + locations + '&mode=walking&units=imperial&language=en-US' + '&key=' + key
-    return api_call
-  end
+  private
+
+    def api_call
+      key = ENV['GOOGLE_MAPS']
+      url = 'https://maps.googleapis.com/maps/api/distancematrix/json?'
+      api_call = url + 'origins=' + locations + '&destinations=' + locations + '&mode=walking&units=imperial&language=en-US' + '&key=' + key
+      #api_call = 'https://www.invalid_url.com'
+      return api_call
+    end
 
 
 end
