@@ -69,7 +69,7 @@ class MinHeap
 
   def delete_element(element)
     element_position = @element_position_map[element.node_data]
-    
+
     unless element_position.nil?
       # exchange the minimum element with the last one in the list
       exchange(element_position, @elements.size - 1)
