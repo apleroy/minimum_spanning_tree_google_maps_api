@@ -85,10 +85,6 @@ class Graph
     min_edge_weight = INT_MAX
     min_edge_index = nil
 
-    puts "in find min edge"
-    puts min_heap.print_heap
-    puts min_node.node_data.name.to_s
-
     # loop through all of min_node's neighbor nodes
     # get the node that is in the included_nodes that has smallest edge weight
     # min edge is edge between this min node and its parent
@@ -125,10 +121,10 @@ class Graph
   def print_graph
     puts "printing graph"
     @node_list.values.each do |node|
-      puts "Node (" + node.node_data.name.to_s + ")"
+      puts "Node (" + node.node_data.to_s + ")"
       puts "node's neighbors: "
       node.neighbors.each_with_index do |neighbor, index|
-        puts neighbor.node_data.name + " edge " + index.to_s + " " + neighbor.edges[index].to_s
+        puts neighbor.node_data.to_s + " edge " + index.to_s + " " + neighbor.edges[index].to_s
       end
     end
   end

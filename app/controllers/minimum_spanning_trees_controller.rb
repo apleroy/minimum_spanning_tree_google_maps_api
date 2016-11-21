@@ -50,12 +50,13 @@ class MinimumSpanningTreesController < ApplicationController
   # POST /minimum_spanning_trees.json
   def create
     @minimum_spanning_tree = MinimumSpanningTree.new(minimum_spanning_tree_params)
+
     respond_to do |format|
       if @minimum_spanning_tree.valid?
         if @minimum_spanning_tree.save
           place_names = minimum_spanning_tree_params[:place_names]
           unless place_names.nil?
-            place_names.each do |place_name|
+            place_names.uniq.each do |place_name|
               @minimum_spanning_tree.places.create(name: place_name)
             end
           end
@@ -73,10 +74,12 @@ class MinimumSpanningTreesController < ApplicationController
   # PATCH/PUT /minimum_spanning_trees/1.json
   def update
     @minimum_spanning_tree.update(minimum_spanning_tree_params)
+
     respond_to do |format|
       if @minimum_spanning_tree.valid?
         place_names = minimum_spanning_tree_params[:place_names]
         minimum_spanning_tree_places = @minimum_spanning_tree.places
+
         current_places_hash = minimum_spanning_tree_places.map { |p| [p.name, p] }.to_h
 
         unless place_names.nil?
@@ -95,6 +98,7 @@ class MinimumSpanningTreesController < ApplicationController
         current_places_hash.each do |key, value|
           value.destroy
         end
+
         format.html { redirect_to @minimum_spanning_tree, flash: { success: 'Minimum spanning tree was successfully updated.' } }
       else
 

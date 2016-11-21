@@ -21,26 +21,10 @@ class MinHeap
     sift_up(@elements.size - 1)
   end
 
-
-  # this method ensures the min-heap property is retained
-  def sift_up(index)
-
-    # we get the parent of the index so we can see if it is larger than the new node
-    parent_index = (index / 2)
-
-    # if the index is 1 - no need to continue
-    return if index <= 1
-
-    # if the element's parent is less than the current element we return (the min heap property is preserved)
-    return if @elements[index] >= @elements[parent_index]
-
-    #otherwise we exchange the two - the smaller element goes into the parent location
-    exchange(index, parent_index)
-
-    # and we recursively call this method to keep sifting up the smaller element
-    sift_up(parent_index)
-
+  def count
+    return @elements.count
   end
+
 
   # get the minimum value from the heap
   def peek_min
@@ -87,61 +71,84 @@ class MinHeap
   end
 
 
-  def sift_down(index)
-
-    # get the first child (the left child)
-    child_index = (index * 2)
-
-    # if the child index is greater than the size of the array it does not exist and we can return
-    return if child_index > @elements.size - 1
-
-    # determine the greater of the two children (if they both exist - and set the child index)
-    not_the_last_element = child_index < @elements.size - 1
-    left_child = @elements[child_index]
-    right_child = @elements[child_index + 1]
-
-    # find the smallest of the two children
-    if not_the_last_element && right_child < left_child
-      child_index += 1
-    end
-
-    # if the element at the current index is smaller than the children, return
-    return if @elements[index] <= @elements[child_index]
-
-    #exchange the larger index with the smaller child
-    exchange(index, child_index)
-
-    #keep sifting down, this time from the farther along child index
-    sift_down(child_index)
-
-  end
-
   def print_heap
     puts "printing min heap"
     @elements.each do |element|
       if element.nil?
         puts " nil "
       else
-        puts element.node_data.name.to_s
+        puts element.node_data.to_s
       end
 
     end
   end
 
-  # exchange two elements within the minheap
-  def exchange(source_index, target_index)
-    tmp_source = @elements[source_index]
-    tmp_target = @elements[target_index]
+  private
 
-    source_element_position = @element_position_map[tmp_source.node_data]
-    target_element_position = @element_position_map[tmp_target.node_data]
+    # this method ensures the min-heap property is retained
+    def sift_up(index)
 
-    @elements[source_index] = tmp_target
-    @elements[target_index] = tmp_source
+      # we get the parent of the index so we can see if it is larger than the new node
+      parent_index = (index / 2)
 
-    @element_position_map[tmp_source.node_data] = target_element_position
-    @element_position_map[tmp_target.node_data] = source_element_position
+      # if the index is 1 - no need to continue
+      return if index <= 1
 
-  end
+      # if the element's parent is less than the current element we return (the min heap property is preserved)
+      return if @elements[index] >= @elements[parent_index]
+
+      #otherwise we exchange the two - the smaller element goes into the parent location
+      exchange(index, parent_index)
+
+      # and we recursively call this method to keep sifting up the smaller element
+      sift_up(parent_index)
+
+    end
+
+
+    def sift_down(index)
+
+      # get the first child (the left child)
+      child_index = (index * 2)
+
+      # if the child index is greater than the size of the array it does not exist and we can return
+      return if child_index > @elements.size - 1
+
+      # determine the greater of the two children (if they both exist - and set the child index)
+      not_the_last_element = child_index < @elements.size - 1
+      left_child = @elements[child_index]
+      right_child = @elements[child_index + 1]
+
+      # find the smallest of the two children
+      if not_the_last_element && right_child < left_child
+        child_index += 1
+      end
+
+      # if the element at the current index is smaller than the children, return
+      return if @elements[index] <= @elements[child_index]
+
+      #exchange the larger index with the smaller child
+      exchange(index, child_index)
+
+      #keep sifting down, this time from the farther along child index
+      sift_down(child_index)
+
+    end
+
+    # exchange two elements within the minheap
+    def exchange(source_index, target_index)
+      tmp_source = @elements[source_index]
+      tmp_target = @elements[target_index]
+
+      source_element_position = @element_position_map[tmp_source.node_data]
+      target_element_position = @element_position_map[tmp_target.node_data]
+
+      @elements[source_index] = tmp_target
+      @elements[target_index] = tmp_source
+
+      @element_position_map[tmp_source.node_data] = target_element_position
+      @element_position_map[tmp_target.node_data] = source_element_position
+
+    end
 
 end

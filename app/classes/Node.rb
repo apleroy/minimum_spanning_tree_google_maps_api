@@ -6,12 +6,12 @@ class Node
 
   attr_accessor :node_data, :neighbors, :edges, :key, :parent
 
-  def initialize(node_data)
-    @node_data = node_data # object, name, or identifier of node (a place object)
-    @neighbors = [] # this node's neighbor nodes - other place objects
-    @edges = [] #this node neighbor edges - edge objects connecting place object to place object
-    @key = INT_MAX
-    @parent = nil
+  def initialize(params = {})
+    @node_data = params.fetch(:node_data, nil) # object, name, or identifier of node (a place object)
+    @neighbors = params.fetch(:neighbors, []) # this node's neighbor nodes - other place objects
+    @edges = params.fetch(:edges, []) #this node neighbor edges - edge objects connecting place object to place object
+    @key = params.fetch(:key, 9999999999).to_i
+    @parent = params.fetch(:parent, nil)
   end
 
   def add_neighbor(node)
