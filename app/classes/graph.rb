@@ -20,13 +20,17 @@ class Graph
 
   def add_undirected_edge(node_from, node_to, weight)
     edge = Edge.new(node_from, node_to, weight)
-    @edges[edge.hash_key] = weight
+    edge2 = Edge.new(node_to, node_from, weight)
 
-    @node_list[node_from.node_data].add_neighbor(node_to)
-    @node_list[node_from.node_data].add_edge(edge)
+    if !@edges.has_key?(edge.hash_key) && !@edges.has_key?(edge2.hash_key)
+      @edges[edge.hash_key] = weight
 
-    @node_list[node_to.node_data].add_neighbor(node_from)
-    @node_list[node_to.node_data].add_edge(edge)
+      @node_list[node_from.node_data].add_neighbor(node_to)
+      @node_list[node_from.node_data].add_edge(edge)
+
+      @node_list[node_to.node_data].add_neighbor(node_from)
+      @node_list[node_to.node_data].add_edge(edge)
+    end
   end
 
   def add_directed_edge(node_from, node_to, weight)
@@ -55,8 +59,6 @@ class Graph
       min_heap << node # add node to min_heap (comparable is on key)
     end
 
-    print_graph
-
     # while there are nodes that exist in the excluded set
     # O(n)
     while excluded_nodes.count > 0
@@ -67,7 +69,7 @@ class Graph
         # find the minimum edge from this min node to the included set of nodes
         # time complexity of O(E) - where E is the edges from a node
         # total times is 2E (undirected graph - all edges) + 2E * log(n)
-        min_edge = find_min_edge(min_node, min_heap, excluded_nodes)
+        min_edge = find_min_edge(min_node, min_heap, included_nodes)
 
         included_edges << min_edge unless min_edge.nil?
         included_nodes[min_node.node_data] = min_node
@@ -75,59 +77,67 @@ class Graph
 
     end
 
-    return included_edges
-
-  end
-
-  # find the minimum edge from the min_node (from excluded to group) to those nodes already included
-  # recompute keys and parents for nodes as applicable
-  def find_min_edge(min_node, min_heap, excluded_nodes)
-    min_edge_weight = INT_MAX
-    min_edge_index = nil
-
-    # loop through all of min_node's neighbor nodes
-    # get the node that is in the included_nodes that has smallest edge weight
-    # min edge is edge between this min node and its parent
-    # we could get this from the graph edges by using the key of min node and parent
-
-    min_node.neighbors.each_with_index do |neighbor, index|
-
-      # reconstruct the key and parent for adjacent nodes that are not already included
-      if min_node.edges[index].weight < neighbor.key
-
-        neighbor.parent = min_node.node_data
-        neighbor.key = min_node.edges[index].weight
-
-        # O(log(n))
-        min_heap.delete_element(neighbor)
-        min_heap << neighbor
-      end
-
-      # if the neighbor node is not excluded (meaning it is in the set)
-      if min_node.edges[index].weight < min_edge_weight && !excluded_nodes.has_key?(neighbor.node_data)
-        min_edge_weight = min_node.edges[index].weight
-        min_edge_index = index
-      end
-
+    puts 'included_edges count: ' + included_edges.count.to_s
+    if included_edges.count == (@node_list.count - 1)
+      return included_edges
+    else
+      return nil
     end
 
-    min_edge = min_node.edges[min_edge_index] unless min_edge_index.nil?
-
-    return min_edge
 
   end
-
 
   def print_graph
-    puts "printing graph"
+    puts 'printing graph'
     @node_list.values.each do |node|
-      puts "Node (" + node.node_data.to_s + ")"
-      puts "node's neighbors: "
+      puts 'Node (' + node.node_data.to_s + ')'
+      puts 'nodes neighbors: '
       node.neighbors.each_with_index do |neighbor, index|
-        puts neighbor.node_data.to_s + " edge " + index.to_s + " " + neighbor.edges[index].to_s
+        puts neighbor.node_data.to_s + ' edge ' + index.to_s + ' ' + neighbor.edges[index].to_s
       end
     end
   end
 
+  private
+
+    # find the minimum edge from the min_node (from excluded to group) to those nodes already included
+    # recompute keys and parents for nodes as applicable
+    def find_min_edge(min_node, min_heap, included_nodes)
+      min_edge_weight = INT_MAX
+      min_edge_index = nil
+
+      # loop through all of min_node's neighbor nodes
+      # get the node that is in the included_nodes that has smallest edge weight
+      # min edge is edge between this min node and its parent
+      # we could get this from the graph edges by using the key of min node and parent
+
+      min_node.neighbors.each_with_index do |neighbor, index|
+
+          # reconstruct the key and parent for adjacent nodes that are not already included
+          if min_node.edges[index].weight < neighbor.key
+
+            neighbor.parent = min_node.node_data
+            neighbor.key = min_node.edges[index].weight
+
+            # O(log(n))
+            if min_heap.contains_element(neighbor)
+              min_heap.delete_element(neighbor)
+              min_heap << neighbor
+            end
+          end
+
+          # if the neighbor node is not excluded (meaning it is in the set)
+          if min_node.edges[index].weight < min_edge_weight && included_nodes.has_key?(neighbor.node_data)
+            min_edge_weight = min_node.edges[index].weight
+            min_edge_index = index
+          end
+
+      end
+
+      min_edge = min_node.edges[min_edge_index] unless min_edge_index.nil?
+
+      return min_edge
+
+    end
 
 end

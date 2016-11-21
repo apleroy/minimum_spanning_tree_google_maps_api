@@ -16,9 +16,11 @@ class MinimumSpanningTreesController < ApplicationController
 
     if !graph.is_a? Exception
       mst_edges = graph.prim_mst
-      mst_edges.each do |edge|
-        mst_edge = MstEdge.new(edge.node1.node_data.name.to_s, edge.node2.node_data.name.to_s, edge.weight)
-        @mst_edges << mst_edge
+      unless mst_edges.nil?
+        mst_edges.each do |edge|
+          mst_edge = MstEdge.new(edge.node1.node_data.name.to_s, edge.node2.node_data.name.to_s, edge.weight)
+          @mst_edges << mst_edge
+        end
       end
     else
       flash.now[:error] = 'There was an error calculating your Minimum Spanning Tree.
@@ -39,9 +41,11 @@ class MinimumSpanningTreesController < ApplicationController
 
     if !graph.is_a? Exception
       mst_edges = graph.prim_mst
-      mst_edges.each do |edge|
-        mst_edge = MstEdge.new(edge.node1.node_data.name.to_s, edge.node2.node_data.name.to_s, edge.weight)
-        @mst_edges << mst_edge
+      unless mst_edges.nil?
+        mst_edges.each do |edge|
+          mst_edge = MstEdge.new(edge.node1.node_data.name.to_s, edge.node2.node_data.name.to_s, edge.weight)
+          @mst_edges << mst_edge
+        end
       end
     end
   end
@@ -83,7 +87,7 @@ class MinimumSpanningTreesController < ApplicationController
         current_places_hash = minimum_spanning_tree_places.map { |p| [p.name, p] }.to_h
 
         unless place_names.nil?
-          place_names.each do |place_name|
+          place_names.uniq.each do |place_name|
             if current_places_hash.key?(place_name)
               #update and remove from hash
               current_places_hash[place_name].update(name: place_name)

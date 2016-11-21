@@ -3,22 +3,22 @@ require 'rails_helper'
 RSpec.describe MinHeap, type: :class do
 
 
-  describe "initialization tests" do
+  describe 'initialization tests' do
 
-    it "initializes with a null element at the first position" do
+    it 'initializes with a null element at the first position' do
       min_heap = MinHeap.new
       expect(min_heap.count).to eq(1)
     end
 
-    it "peek min is nil with no elements" do
+    it 'peek min is nil with no elements' do
       min_heap = MinHeap.new
       expect(min_heap.peek_min).to eq(nil)
     end
   end
 
-  describe "min heap ordering on insert" do
+  describe 'min heap ordering on insert' do
 
-    it "preserves ordering of one element" do
+    it 'preserves ordering of one element' do
       min_heap = MinHeap.new
       node = Node.new(node_data: 1)
       min_heap << node
@@ -26,7 +26,7 @@ RSpec.describe MinHeap, type: :class do
       expect(min_heap.peek_min).to eq(node)
     end
 
-    it "preserves ordering of two elements in order" do
+    it 'preserves ordering of two elements in order' do
       min_heap = MinHeap.new
       node1 = Node.new(node_data: 1, key: 1)
       node2 = Node.new(node_data: 2, key: 2)
@@ -36,7 +36,7 @@ RSpec.describe MinHeap, type: :class do
       expect(min_heap.peek_min).to eq(node1)
     end
 
-    it "preserves ordering of two elements reverse" do
+    it 'preserves ordering of two elements reverse' do
       min_heap = MinHeap.new
       node1 = Node.new(node_data: 1, key: 1)
       node2 = Node.new(node_data: 2, key: 2)
@@ -46,7 +46,7 @@ RSpec.describe MinHeap, type: :class do
       expect(min_heap.peek_min).to eq(node1)
     end
 
-    it "preserves ordering of three elements out of order" do
+    it 'preserves ordering of three elements out of order' do
       min_heap = MinHeap.new
       node1 = Node.new(node_data: 1, key: 1)
       node2 = Node.new(node_data: 2, key: 2)
@@ -61,9 +61,9 @@ RSpec.describe MinHeap, type: :class do
   end
 
 
-  describe "extract min testing" do
+  describe 'extract min testing' do
 
-    it "insert in asc - preserves ordering after extract min" do
+    it 'insert in asc - preserves ordering after extract min' do
       min_heap = MinHeap.new
       for i in 1..10
         min_heap << Node.new(node_data: i, key: i)
@@ -76,7 +76,7 @@ RSpec.describe MinHeap, type: :class do
       expect(min_heap.count).to eq(10)
     end
 
-    it "insert in desc - preserves ordering after extract min" do
+    it 'insert in desc - preserves ordering after extract min' do
       min_heap = MinHeap.new
       for i in 1..10
         min_heap << Node.new(node_data: 11 - i, key: 11 - i)

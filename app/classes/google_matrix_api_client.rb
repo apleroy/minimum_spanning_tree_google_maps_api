@@ -31,7 +31,7 @@ class GoogleMatrixApiClient
             node_to = graph.find_node_by_element(@places[i])
             distance = element['distance']['value'].to_i
             if distance > 1 # don't add self to self
-              graph.add_directed_edge(node_from, node_to, distance) #because this is a matrix with repeats - can use directed edge add
+              graph.add_undirected_edge(node_from, node_to, distance) #because this is a matrix with repeats - can use directed edge add
             end
           else
             raise RestClient::Exception # example would be invalid city to city direction

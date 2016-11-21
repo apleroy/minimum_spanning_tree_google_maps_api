@@ -50,6 +50,10 @@ class MinHeap
 
   end
 
+  def contains_element(element)
+    return @element_position_map.has_key?(element.node_data)
+  end
+
 
   def delete_element(element)
     element_position = @element_position_map[element.node_data]
@@ -72,10 +76,10 @@ class MinHeap
 
 
   def print_heap
-    puts "printing min heap"
+    puts 'printing min heap'
     @elements.each do |element|
       if element.nil?
-        puts " nil "
+        puts  'nil'
       else
         puts element.node_data.to_s
       end
