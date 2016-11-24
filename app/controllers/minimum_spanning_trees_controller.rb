@@ -13,15 +13,9 @@ class MinimumSpanningTreesController < ApplicationController
   def show
     graph = @minimum_spanning_tree.graph
     @mst_edges = []
-
     if !graph.is_a? Exception
-      mst_edges = graph.prim_mst
-      unless mst_edges.nil?
-        mst_edges.each do |edge|
-          mst_edge = MstEdge.new(edge.node1.node_data.name.to_s, edge.node2.node_data.name.to_s, edge.weight)
-          @mst_edges << mst_edge
-        end
-      end
+      mst = graph.minimum_spanning_tree
+      @mst_edges = graph.minimum_spanning_tree_edges(mst)
     else
       flash.now[:error] = 'There was an error calculating your Minimum Spanning Tree.
         Be sure that your locations have valid addresses and all can be reached by driving from place to place.'
@@ -40,13 +34,8 @@ class MinimumSpanningTreesController < ApplicationController
     @mst_edges = []
 
     if !graph.is_a? Exception
-      mst_edges = graph.prim_mst
-      unless mst_edges.nil?
-        mst_edges.each do |edge|
-          mst_edge = MstEdge.new(edge.node1.node_data.name.to_s, edge.node2.node_data.name.to_s, edge.weight)
-          @mst_edges << mst_edge
-        end
-      end
+      mst = graph.minimum_spanning_tree
+      @mst_edges = graph.minimum_spanning_tree_edges(mst)
     end
   end
 

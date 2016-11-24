@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc0b8f70-cdb1-41bc-a5b5-63d9d3a32834" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/classes/prim_minimum_spanning_tree.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/classes/Node.rb" afterPath="$PROJECT_DIR$/app/classes/Node.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/classes/google_matrix_api_client.rb" afterPath="$PROJECT_DIR$/app/classes/google_matrix_api_client.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/classes/graph.rb" afterPath="$PROJECT_DIR$/app/classes/graph.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/classes/min_heap.rb" afterPath="$PROJECT_DIR$/app/classes/min_heap.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/classes/mst_edge.rb" afterPath="$PROJECT_DIR$/app/classes/mst_edge.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/minimum_spanning_trees_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/minimum_spanning_trees_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/application.rb" afterPath="$PROJECT_DIR$/config/application.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/classes/graph_spec.rb" afterPath="$PROJECT_DIR$/spec/classes/graph_spec.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/classes/min_heap_spec.rb" afterPath="$PROJECT_DIR$/spec/classes/min_heap_spec.rb" />
     </list>
     <ignored path="google_maps_app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,7 +27,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/google_maps_app@Development__google_maps_app.coverage" NAME="Development: google_maps_app Coverage Results" MODIFIED="1479678617717" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="google_maps_app" />
+    <SUITE FILE_PATH="coverage/google_maps_app@Development__google_maps_app.coverage" NAME="Development: google_maps_app Coverage Results" MODIFIED="1480025764192" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="google_maps_app" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -43,7 +42,27 @@
         <entry file="file://$PROJECT_DIR$/app/controllers/minimum_spanning_trees_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+              <caret line="37" column="57" selection-start-line="37" selection-start-column="57" selection-end-line="37" selection-end-column="57" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="prim_minimum_spanning_tree.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/classes/prim_minimum_spanning_tree.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="41" column="7" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="graph.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/classes/graph.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.8695652">
+              <caret line="61" column="27" selection-start-line="61" selection-start-column="6" selection-end-line="61" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -59,21 +78,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="graph.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/classes/graph.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="84" column="7" selection-start-line="84" selection-start-column="7" selection-end-line="84" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="graph_spec.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="graph_spec.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spec/classes/graph_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7916667">
-              <caret line="163" column="23" selection-start-line="163" selection-start-column="23" selection-end-line="163" selection-end-column="23" />
+            <state vertical-scroll-proportion="-7.8867927">
+              <caret line="153" column="48" selection-start-line="153" selection-start-column="48" selection-end-line="153" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -83,7 +92,7 @@
         <entry file="file://$PROJECT_DIR$/app/classes/google_matrix_api_client.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="31" column="56" selection-start-line="31" selection-start-column="56" selection-end-line="31" selection-end-column="56" />
+              <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -93,17 +102,7 @@
         <entry file="file://$PROJECT_DIR$/app/classes/mst_edge.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edge.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/classes/edge.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -122,7 +121,7 @@
       <file leaf-file-name="min_heap.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/classes/min_heap.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="28.11111">
+            <state vertical-scroll-proportion="17.185184">
               <caret line="71" column="24" selection-start-line="71" selection-start-column="24" selection-end-line="71" selection-end-column="24" />
               <folding />
             </state>
@@ -138,7 +137,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/config/puma.rb" />
-        <option value="$PROJECT_DIR$/config/application.rb" />
         <option value="$PROJECT_DIR$/app/views/static_pages/test.html.erb" />
         <option value="$PROJECT_DIR$/vendor/assets/javascripts/infobubble.js" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
@@ -165,7 +163,6 @@
         <option value="$PROJECT_DIR$/app/models/place.rb" />
         <option value="$PROJECT_DIR$/app/classes/Node.rb" />
         <option value="$PROJECT_DIR$/spec/models/place_spec.rb" />
-        <option value="$PROJECT_DIR$/app/classes/mst_edge.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/minimum_spanning_trees.js" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/bootstrap_and_overrides.css.less" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
@@ -175,11 +172,15 @@
         <option value="$PROJECT_DIR$/app/models/minimum_spanning_tree.rb" />
         <option value="$PROJECT_DIR$/app/classes/node.rb" />
         <option value="$PROJECT_DIR$/spec/classes/min_heap_spec.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/minimum_spanning_trees_controller.rb" />
         <option value="$PROJECT_DIR$/app/classes/google_matrix_api_client.rb" />
         <option value="$PROJECT_DIR$/app/classes/min_heap.rb" />
         <option value="$PROJECT_DIR$/app/classes/edge.rb" />
+        <option value="$PROJECT_DIR$/config/application.rb" />
+        <option value="$PROJECT_DIR$/lib/graph_module.rb" />
+        <option value="$PROJECT_DIR$/app/classes/mst_edge.rb" />
         <option value="$PROJECT_DIR$/app/classes/graph.rb" />
+        <option value="$PROJECT_DIR$/app/classes/prim_minimum_spanning_tree.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/minimum_spanning_trees_controller.rb" />
         <option value="$PROJECT_DIR$/spec/classes/graph_spec.rb" />
       </list>
     </option>
@@ -877,7 +878,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32088798" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32088798" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -933,20 +934,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/static_pages/test.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.125">
-          <caret line="114" column="9" selection-start-line="110" selection-start-column="6" selection-end-line="114" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/_footer.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile.lock">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1249,26 +1236,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/classes/google_matrix_api_client.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="56" selection-start-line="31" selection-start-column="56" selection-end-line="31" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/classes/mst_edge.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/classes/edge.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/application.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/classes/google_matrix_api_client.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/classes/min_heap.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="17.185184">
+          <caret line="71" column="24" selection-start-line="71" selection-start-column="24" selection-end-line="71" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -1281,10 +1276,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/classes/min_heap.rb">
+    <entry file="file://$PROJECT_DIR$/app/classes/mst_edge.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="28.11111">
-          <caret line="71" column="24" selection-start-line="71" selection-start-column="24" selection-end-line="71" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1300,23 +1295,31 @@
     <entry file="file://$PROJECT_DIR$/app/controllers/minimum_spanning_trees_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/classes/graph.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="84" column="7" selection-start-line="84" selection-start-column="7" selection-end-line="84" selection-end-column="7" />
+          <caret line="37" column="57" selection-start-line="37" selection-start-column="57" selection-end-line="37" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/classes/graph_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7916667">
-          <caret line="163" column="23" selection-start-line="163" selection-start-column="23" selection-end-line="163" selection-end-column="23" />
+        <state vertical-scroll-proportion="-7.8867927">
+          <caret line="153" column="48" selection-start-line="153" selection-start-column="48" selection-end-line="153" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/classes/prim_minimum_spanning_tree.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="41" column="7" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/classes/graph.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8695652">
+          <caret line="61" column="27" selection-start-line="61" selection-start-column="6" selection-end-line="61" selection-end-column="27" />
           <folding />
         </state>
       </provider>

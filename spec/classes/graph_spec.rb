@@ -67,12 +67,12 @@ RSpec.describe Graph, type: :class do
 
     it 'finds mst with zero nodes' do
       graph = Graph.new
-      expect(graph.prim_mst).to eq(nil)
+      expect(graph.minimum_spanning_tree).to eq(nil)
     end
 
     it 'finds mst with one node' do
       graph = Graph.new
-      expect(graph.prim_mst).to eq(nil)
+      expect(graph.minimum_spanning_tree).to eq(nil)
     end
 
     it 'finds mst with two nodes - undirected edge' do
@@ -87,7 +87,7 @@ RSpec.describe Graph, type: :class do
       graph.add_undirected_edge(node1, node2, 1)
 
       edge = Edge.new(node1, node2, 1)
-      expect(graph.prim_mst).to include(edge)
+      expect(graph.minimum_spanning_tree).to include(edge)
     end
 
     it 'finds mst with three nodes - undirected edges' do
@@ -107,8 +107,8 @@ RSpec.describe Graph, type: :class do
       edge1 = Edge.new(node1, node2, 1)
       edge2 = Edge.new(node2, node3, 2)
 
-      expect(graph.prim_mst).to include(edge1)
-      expect(graph.prim_mst).to include(edge2)
+      expect(graph.minimum_spanning_tree).to include(edge1)
+      expect(graph.minimum_spanning_tree).to include(edge2)
     end
 
     it 'finds mst with three nodes - unconnected graph' do
@@ -124,7 +124,7 @@ RSpec.describe Graph, type: :class do
 
       graph.add_undirected_edge(node1, node2, 1)
 
-      expect(graph.prim_mst).to eq(nil)
+      expect(graph.minimum_spanning_tree).to eq(nil)
     end
 
     it 'finds mst with four nodes - connected graph' do
@@ -153,19 +153,28 @@ RSpec.describe Graph, type: :class do
       graph.add_undirected_edge(nodeC, nodeD, 1)
       graph.add_undirected_edge(nodeB, nodeD, 3)
 
-      puts 'edge count' + graph.edges.count.to_s
+
 
       edge1 = Edge.new(nodeA, nodeB, 6)
       edge2 = Edge.new(nodeA, nodeC, 2)
       edge3 = Edge.new(nodeC, nodeD, 1)
       edge4 = Edge.new(nodeB, nodeD, 3)
 
-      mst = graph.prim_mst
+      mst = graph.minimum_spanning_tree
       graph.print_graph
-      mst2 = graph.prim_mst
+      puts 'edge count' + graph.edges.count.to_s
+
+      mst2 = graph.minimum_spanning_tree
       graph.print_graph
+      puts 'edge count second time' + graph.edges.count.to_s
+
       expect(mst).to_not include(edge1)
       expect(mst).to include(edge2, edge3, edge4)
+
+      expect(mst2).to_not include(edge1)
+      expect(mst2).to include(edge2, edge3, edge4)
+
+
     end
 
 end

@@ -1,6 +1,5 @@
 class MstEdge
 
-
   attr_accessor :name1, :name2, :weight
 
   def initialize(name1, name2, weight)
