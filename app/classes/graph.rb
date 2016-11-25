@@ -1,6 +1,5 @@
 class Graph
 
-
   attr_accessor :node_list
   attr_accessor :edges
 

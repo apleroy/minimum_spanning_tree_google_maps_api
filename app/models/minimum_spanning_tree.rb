@@ -6,8 +6,8 @@ class MinimumSpanningTree < ActiveRecord::Base
   validates :name, presence: true
 
   def graph
-    google_maps_api_client = GoogleMatrixApiClient.new(self.places)
-    return google_maps_api_client.build_graph
+    google_maps_api_client = GoogleMatrixApiClient.new
+    return google_maps_api_client.build_graph(self.places)
   end
 
 

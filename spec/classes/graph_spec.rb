@@ -161,13 +161,9 @@ RSpec.describe Graph, type: :class do
       edge4 = Edge.new(nodeB, nodeD, 3)
 
       mst = graph.minimum_spanning_tree
-      graph.print_graph
-      puts 'edge count' + graph.edges.count.to_s
 
       mst2 = graph.minimum_spanning_tree
-      graph.print_graph
-      puts 'edge count second time' + graph.edges.count.to_s
-
+      
       expect(mst).to_not include(edge1)
       expect(mst).to include(edge2, edge3, edge4)
 
