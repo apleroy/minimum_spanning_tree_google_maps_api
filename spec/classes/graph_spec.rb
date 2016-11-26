@@ -163,7 +163,7 @@ RSpec.describe Graph, type: :class do
       mst = graph.minimum_spanning_tree
 
       mst2 = graph.minimum_spanning_tree
-      
+
       expect(mst).to_not include(edge1)
       expect(mst).to include(edge2, edge3, edge4)
 
