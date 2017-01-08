@@ -70,27 +70,10 @@ class MinimumSpanningTreesController < ApplicationController
 
     respond_to do |format|
       if @minimum_spanning_tree.valid?
-        place_names = minimum_spanning_tree_params[:place_names]
-        minimum_spanning_tree_places = @minimum_spanning_tree.places
+        new_place_params = minimum_spanning_tree_params[:place_names]
+        mst_places = @minimum_spanning_tree.places
 
-        current_places_hash = minimum_spanning_tree_places.map { |p| [p.name, p] }.to_h
-
-        unless place_names.nil?
-          place_names.uniq.each do |place_name|
-            if current_places_hash.key?(place_name)
-              #update and remove from hash
-              current_places_hash[place_name].update(name: place_name)
-              current_places_hash.delete(place_name)
-            else
-              minimum_spanning_tree_places.create(name: place_name)
-            end
-          end
-        end
-
-        #delete all remaining objects in the hash
-        current_places_hash.each do |key, value|
-          value.destroy
-        end
+        update_list_from_params(new_place_params, mst_places)
 
         format.html { redirect_to @minimum_spanning_tree, flash: { success: 'Minimum spanning tree was successfully updated.' } }
       else
@@ -128,5 +111,29 @@ class MinimumSpanningTreesController < ApplicationController
       callback_method = 'initMap'
       key = ENV['GOOGLE_MAPS']
       @endpoint = url + key + '&libraries=places&callback=' + callback_method
+    end
+
+    # helper method for the update method
+    # accepts a list of place parameters and the current object list
+    # updates and makes necessary deletions from a list in O(n)
+    def update_list_from_params(new_params, current_object_list)
+      current_object_hash = current_object_list.map { |p| [p.name, p] }.to_h
+
+      unless new_params.nil?
+        new_params.uniq.each do |param_name|
+          if current_object_hash.key?(param_name)
+            # update and remove from hash
+            current_object_hash[param_name].update(name: param_name)
+            current_object_hash.delete(param_name)
+          else
+            current_object_hash.create(name: param_name)
+          end
+        end
+      end
+
+      #delete all remaining objects in the hash
+      current_object_hash.each do |key, value|
+        value.destroy
+      end
     end
 end

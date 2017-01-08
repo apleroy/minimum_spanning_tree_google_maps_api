@@ -18,18 +18,22 @@ class Graph
   end
 
   def add_undirected_edge(node_from, node_to, weight)
-    edge = Edge.new(node_from, node_to, weight)
+    edge1 = Edge.new(node_from, node_to, weight)
     edge2 = Edge.new(node_to, node_from, weight)
 
-    if !@edges.has_key?(edge.hash_key) && !@edges.has_key?(edge2.hash_key)
-      @edges[edge.hash_key] = weight
+    # edge1 and edge2 used as checks to prevent duplicate edges between two nodes
+    # since this is an undirected graph, only add edge1 (edge2 is just for a check)
+    if !@edges.has_key?(edge1.hash_key) && !@edges.has_key?(edge2.hash_key)
 
       @node_list[node_from.node_data].add_neighbor(node_to)
-      @node_list[node_from.node_data].add_edge(edge)
+      @node_list[node_from.node_data].add_edge(edge1)
 
       @node_list[node_to.node_data].add_neighbor(node_from)
-      @node_list[node_to.node_data].add_edge(edge)
+      @node_list[node_to.node_data].add_edge(edge1)
+
+      @edges[edge1.hash_key] = weight
     end
+
   end
 
   def add_directed_edge(node_from, node_to, weight)

@@ -9,7 +9,7 @@ class Node
   def initialize(params = {})
     @node_data = params.fetch(:node_data, nil) # object, name, or identifier of node (a place object)
     @neighbors = params.fetch(:neighbors, []) # this node's neighbor nodes - other place objects
-    @edges = params.fetch(:edges, []) #this node neighbor edges - edge objects connecting place object to place object
+    @edges = params.fetch(:edges, []) # this node neighbor edges - edge objects connecting place object to place object
     @key = params.fetch(:key, INT_MAX)
     @parent = params.fetch(:parent, nil)
   end

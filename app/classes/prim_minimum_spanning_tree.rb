@@ -11,6 +11,7 @@ class PrimMinimumSpanningTree
   end
 
   def minimum_spanning_tree
+
     @graph.update_all_nodes_to_distance(INT_MAX)
 
     # setup the heap of nodes and the excluded sets
@@ -28,7 +29,7 @@ class PrimMinimumSpanningTree
     while @excluded_nodes.count > 0
 
       # find the node that has the minimum key
-      min_node = @min_heap.extract_min # (log(n)) -> total become n(log(n))
+      min_node = @min_heap.extract_min # (log(n)) -> total becomes n(log(n))
 
       # find the minimum edge from this min node to the included set of nodes
       # time complexity of O(E) - where E is the edges from a node
@@ -41,6 +42,7 @@ class PrimMinimumSpanningTree
 
     end
 
+    # check to ensure accuracy
     if @included_edges.count == (@graph.node_list.count - 1)
       return @included_edges
     else

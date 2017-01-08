@@ -101,7 +101,7 @@ class MinHeap
       # if the element's parent is less than the current element we return (the min heap property is preserved)
       return if @elements[index] >= @elements[parent_index]
 
-      #otherwise we exchange the two - the smaller element goes into the parent location
+      # otherwise we exchange the two - the smaller element goes into the parent location
       exchange(index, parent_index)
 
       # and we recursively call this method to keep sifting up the smaller element
@@ -131,10 +131,10 @@ class MinHeap
       # if the element at the current index is smaller than the children, return
       return if @elements[index] <= @elements[child_index]
 
-      #exchange the larger index with the smaller child
+      # exchange the larger index with the smaller child
       exchange(index, child_index)
 
-      #keep sifting down, this time from the farther along child index
+      # keep sifting down, this time from the farther along child index
       sift_down(child_index)
 
     end

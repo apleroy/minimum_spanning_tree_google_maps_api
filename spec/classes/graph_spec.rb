@@ -64,6 +64,59 @@ RSpec.describe Graph, type: :class do
       expect(node2.edges.count).to eq(1)
     end
 
+    it 'does not add duplicated undirected edge' do
+      graph = Graph.new
+
+      node1 = Node.new(node_data: 1)
+      node2 = Node.new(node_data: 2)
+
+      graph.add_node(node1)
+      graph.add_node(node2)
+
+      graph.add_undirected_edge(node1, node2, 1)
+      expect(graph.edges.count).to eq(1)
+      expect(graph.node_list.count).to eq(2)
+
+      expect(node1.edges.count).to eq(1)
+      expect(node2.edges.count).to eq(1)
+
+      graph.add_undirected_edge(node1, node2, 1)
+      expect(graph.edges.count).to eq(1)
+      expect(graph.node_list.count).to eq(2)
+
+      expect(node1.edges.count).to eq(1)
+      expect(node2.edges.count).to eq(1)
+
+    end
+
+    it 'does not add new undirected edge between two already connected nodes' do
+      graph = Graph.new
+
+      node1 = Node.new(node_data: 1)
+      node2 = Node.new(node_data: 2)
+
+      graph.add_node(node1)
+      graph.add_node(node2)
+
+      graph.add_undirected_edge(node1, node2, 5)
+      expect(graph.edges.count).to eq(1)
+      expect(graph.node_list.count).to eq(2)
+
+      expect(node1.edges.count).to eq(1)
+      expect(node2.edges.count).to eq(1)
+
+      graph.add_undirected_edge(node1, node2, 4)
+      expect(graph.edges.count).to eq(1)
+      expect(graph.node_list.count).to eq(2)
+
+      expect(node1.edges.count).to eq(1)
+      expect(node2.edges.count).to eq(1)
+
+      edge = Edge.new(node1, node2, 1)
+      expect(graph.edges[edge.hash_key]).to eq(5)
+
+    end
+
 
     it 'finds mst with zero nodes' do
       graph = Graph.new

@@ -24,7 +24,7 @@ class GoogleMatrixApiClient
             node_to = graph.find_node_by_element(locations[i])
             distance = element['distance']['value'].to_i
             if distance > 1 # don't add self to self
-              graph.add_undirected_edge(node_from, node_to, distance) #because this is a matrix with repeats - can use directed edge add
+              graph.add_undirected_edge(node_from, node_to, distance)
             end
           else
             raise RestClient::Exception # example would be invalid city to city direction
@@ -66,7 +66,7 @@ class GoogleMatrixApiClient
       formatted_location_list = formatted_locations(locations)
       key = ENV['GOOGLE_MAPS']
       url = 'https://maps.googleapis.com/maps/api/distancematrix/json?'
-      api_call = url + 'origins=' + formatted_location_list + '&destinations=' + formatted_location_list + '&mode=walking&units=imperial&language=en-US' + '&key=' + key
+      api_call = url + 'origins=' + formatted_location_list + '&destinations=' + formatted_location_list + '&mode=driving&units=imperial&language=en-US' + '&key=' + key
       return api_call
     end
 
