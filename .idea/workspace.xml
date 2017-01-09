@@ -2,12 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc0b8f70-cdb1-41bc-a5b5-63d9d3a32834" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/minimum_spanning_trees.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/minimum_spanning_trees.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/classes/edge.rb" afterPath="$PROJECT_DIR$/app/classes/edge.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/classes/google_matrix_api_client.rb" afterPath="$PROJECT_DIR$/app/classes/google_matrix_api_client.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/classes/graph_builder.rb" afterPath="$PROJECT_DIR$/app/classes/graph_builder.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/classes/min_heap.rb" afterPath="$PROJECT_DIR$/app/classes/min_heap.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/_footer.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/_footer.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/static_pages/home.html.erb" afterPath="$PROJECT_DIR$/app/views/static_pages/home.html.erb" />
     </list>
     <ignored path="google_maps_app.iws" />
@@ -88,7 +82,7 @@
         <entry file="file://$PROJECT_DIR$/app/views/static_pages/home.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
-              <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+              <caret line="14" column="137" selection-start-line="14" selection-start-column="137" selection-end-line="14" selection-end-column="137" />
               <folding />
             </state>
           </provider>
@@ -875,12 +869,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1475351266272</updated>
-      <workItem from="1483320224390" duration="20791000" />
+      <workItem from="1483320224390" duration="20865000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20791000" />
+    <option name="totallyTimeSpent" value="20865000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1280" y="23" width="1787" height="737" extended-state="0" />
@@ -1340,7 +1334,7 @@
     <entry file="file://$PROJECT_DIR$/app/views/static_pages/home.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+          <caret line="14" column="137" selection-start-line="14" selection-start-column="137" selection-end-line="14" selection-end-column="137" />
           <folding />
         </state>
       </provider>
