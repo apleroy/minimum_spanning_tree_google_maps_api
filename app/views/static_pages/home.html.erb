@@ -12,6 +12,7 @@
         This application showcases an example of creating and editing minimum spanning trees in a visual manner by using the Google Maps API.
         Use this application to enter map based locations.  Locations will become nodes in the minimum spanning tree, and the shortest routes between the locations will be used
         in calculating the edges and the overall minimum spanning tree, which is plotted visually.
+        Visit <a href="http://apleroy.com" target="_blank"> apleroy.com</a> for a full overview and tutorial for this application
       </p>
       <%= link_to "Get Started", new_minimum_spanning_tree_path, class: "btn btn-success button-home" %>
     </div>
@@ -22,44 +23,7 @@
   </div>
 
 
-
   <hr class="featurette-divider">
 
-  <div class="row featurette">
-    <div class="col-md-12">
-      <h2 class="featurette-heading">What is a Minimum Spanning Tree?</h2>
-      <b>Graph Overview</b><br />
-      <p class="lead">
-
-        Before talking about the specifics of a Minimum Spanning Tree (MST), it is helpful to understand a graph at a high level.  For a visual example context, and the one used in this application, a graph can be thought of as a map.  Each location or place is a point - technically referred to as a Node.  Nodes of the graph are connected to one another as Edges.  Edges can be ‘directed’ or ‘undirected’.  Directed edges form a ‘one-way’ connection between two nodes A --> B whereas undirected edges are a ‘round-trip’ connection between two nodes A <--> B.
-      </p>
-      <b>Edge Weights</b><br />
-      <p class="lead">
-        So in a quick example, let’s take four cities – Seattle, Los Angeles, Boston, and St. Louis.  These are the Nodes of our new Graph.  Any connections between them represent our Edges.  In the above example, the driving distance between each city is the edge weight.  With the Google Maps API, this is expressed in meters (and uses the driving distance by shortest route).  So the edge from St. Louis to Seattle would be 3,344,055 meters.  For purposes of this application, the map is implemented as an undirected graph, meaning that driving from St. Louis to Seattle and driving from Seattle to St. Louis are the same.  As a result, there are (N * (N – 1) / 2) undirected edges connecting each of the nodes.  This allows us to use Prim’s Minimum Spanning Tree algorithm discussed below in detail.
-
-        Before moving on, it is important to note that even though this example uses an undirected graph and considers driving between two cities as the same, this is not technically equivalent.  Driving from St. Louis to Seattle is 3,344,055 meters, but the reverse route is only 3,342,228 meters – a difference of almost 2km.  This example application could be implemented as a directed graph with each driving route being two directed edges.  For plotting purposes visually, and first exposure of Prim’s algorithm, I have decided to take the lower distance between the two points and use it interchangeably.  The details of how the shorter route is stored is discussed further in the blog post here: XXXXX.
-
-        A more explicit example of a directed graph would be the same map of cities but with flight prices between each city as the edge weights.  This would have to be a directed graph as flying from St. Louis to Seattle could be $200, whereas the reverse could be $500 depending on the situation.  There is no ‘switching the graph to be undirected’ for this use case.
-
-        https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&mode=driving&origins=Seattle,WA&destinations=St+Louis,MO&key=KEY
-      </p>
-      <b>Minimum Spanning Tree & Prim’s Algorithm</b><br />
-      <p class="lead">
-
-        Now that we have our undirected graph of locations – the nodes - and their edge weights – the distance between them – we can calculate the minimum spanning tree.  The MST is defined as the route that connects all nodes of the graph with the minimum possible total sum of edge weights.  In the example of the four cities above, the MST would be the edges of Seattle --> Los Angeles, Los Angeles --> St. Louis, and St. Louis to New York City.
-
-        The applications of this algorithm can address question such as:
-        <ul>
-          <li>What is the least amount of equipment needed to connect a network of power stations?</li>
-          <li>What is the least amount of telephone/internet cable needed to connect office locations of a company?</li>
-        </ul>
-        This application uses locations on a map to visually highlight the MST and its application to a map.
-      </p>
-
-    </div>
-
-  </div>
-
-  <hr class="featurette-divider">
 
 </div>

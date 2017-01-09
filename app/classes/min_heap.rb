@@ -41,7 +41,6 @@ class MinHeap
     min_element = @elements.pop
     @element_position_map.delete(min_element.node_data)
 
-
     # make sure the tree is ordered - call the helper method to sift down the new root node into appropriate position
     sift_down(1)
 

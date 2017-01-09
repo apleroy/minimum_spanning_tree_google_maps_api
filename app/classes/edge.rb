@@ -18,5 +18,4 @@ class Edge
     @weight <=> other.weight
   end
 
-
 end

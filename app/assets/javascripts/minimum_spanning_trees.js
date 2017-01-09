@@ -165,7 +165,7 @@ function plotEdges(map) {
     var markers = [];
     // foreach edge
     // initialize directionService and directionDisplay
-    //pass the nodes of the edge to the service
+    // pass the nodes of the edge to the service
     for (var i = 0; i < $mst_edges.length; i++) {
 
         var node1 = $mst_edges[i].name1;

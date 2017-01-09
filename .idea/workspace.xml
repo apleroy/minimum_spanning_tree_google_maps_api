@@ -2,18 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc0b8f70-cdb1-41bc-a5b5-63d9d3a32834" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/static_pages.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/static_pages.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/minimum_spanning_trees.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/minimum_spanning_trees.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/classes/edge.rb" afterPath="$PROJECT_DIR$/app/classes/edge.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/classes/google_matrix_api_client.rb" afterPath="$PROJECT_DIR$/app/classes/google_matrix_api_client.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/classes/graph.rb" afterPath="$PROJECT_DIR$/app/classes/graph.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/classes/graph_builder.rb" afterPath="$PROJECT_DIR$/app/classes/graph_builder.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/classes/min_heap.rb" afterPath="$PROJECT_DIR$/app/classes/min_heap.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/classes/prim_minimum_spanning_tree.rb" afterPath="$PROJECT_DIR$/app/classes/prim_minimum_spanning_tree.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/minimum_spanning_trees_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/minimum_spanning_trees_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/_footer.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/_footer.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/minimum_spanning_trees/new.html.erb" afterPath="$PROJECT_DIR$/app/views/minimum_spanning_trees/new.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/static_pages/home.html.erb" afterPath="$PROJECT_DIR$/app/views/static_pages/home.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/classes/graph_spec.rb" afterPath="$PROJECT_DIR$/spec/classes/graph_spec.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/assets/stylesheets/marketing.css.scss" afterPath="$PROJECT_DIR$/vendor/assets/stylesheets/marketing.css.scss" />
     </list>
     <ignored path="google_maps_app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,12 +37,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="minimum_spanning_trees_controller.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/minimum_spanning_trees_controller.rb">
+      <file leaf-file-name="_footer.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/layouts/_footer.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="38" column="7" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="7" />
+            <state relative-caret-position="90">
+              <caret line="6" column="67" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="67" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="minimum_spanning_trees.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/minimum_spanning_trees.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="504">
+              <caret line="190" column="23" selection-start-line="190" selection-start-column="23" selection-end-line="190" selection-end-column="23" />
+              <folding>
+                <marker date="1483913147000" expanded="true" signature="1012:1238" ph="..." />
+                <marker date="1483913147000" expanded="true" signature="1127:1134" ph="×" />
+                <marker date="1483913147000" expanded="true" signature="4168:4384" ph="..." />
+                <marker date="1483913147000" expanded="true" signature="4173:4309" ph="..." />
+                <marker date="1483913147000" expanded="true" signature="4181:4220" ph="..." />
+                <marker date="1483913147000" expanded="true" signature="4253:4303" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -55,35 +67,9 @@
       <file leaf-file-name="min_heap.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/classes/min_heap.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+            <state relative-caret-position="150">
+              <caret line="47" column="22" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="min_heap_spec.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spec/classes/min_heap_spec.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="876">
-              <caret line="94" column="3" selection-start-line="94" selection-start-column="3" selection-end-line="94" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="minimum_spanning_trees.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/minimum_spanning_trees.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="849">
-              <caret line="185" column="75" selection-start-line="185" selection-start-column="71" selection-end-line="185" selection-end-column="75" />
-              <folding>
-                <marker date="1478475449000" expanded="true" signature="1012:1238" ph="..." />
-                <marker date="1478475449000" expanded="true" signature="4168:4384" ph="..." />
-                <marker date="1478475449000" expanded="true" signature="4173:4309" ph="..." />
-                <marker date="1478475449000" expanded="true" signature="4181:4220" ph="..." />
-                <marker date="1478475449000" expanded="true" signature="4253:4303" ph="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -91,18 +77,18 @@
       <file leaf-file-name="prim_minimum_spanning_tree.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/classes/prim_minimum_spanning_tree.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1335">
-              <caret line="89" column="7" selection-start-line="89" selection-start-column="7" selection-end-line="89" selection-end-column="7" />
+            <state relative-caret-position="525">
+              <caret line="95" column="7" selection-start-line="57" selection-start-column="4" selection-end-line="95" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="google_matrix_api_client.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/classes/google_matrix_api_client.rb">
+      <file leaf-file-name="home.html.erb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/static_pages/home.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="33" column="9" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
+            <state relative-caret-position="210">
+              <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -111,18 +97,8 @@
       <file leaf-file-name="graph.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/classes/graph.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="graph_spec.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spec/classes/graph_spec.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
+            <state relative-caret-position="-622">
+              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -131,8 +107,8 @@
       <file leaf-file-name="node.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/classes/node.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" column="3" selection-start-line="30" selection-start-column="3" selection-end-line="30" selection-end-column="3" />
+            <state relative-caret-position="420">
+              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -141,8 +117,28 @@
       <file leaf-file-name="edge.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/classes/edge.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+            <state relative-caret-position="135">
+              <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="google_matrix_api_client.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/classes/google_matrix_api_client.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="graph_builder.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/classes/graph_builder.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -179,34 +175,34 @@
         <option value="$PROJECT_DIR$/app/models/place.rb" />
         <option value="$PROJECT_DIR$/app/classes/Node.rb" />
         <option value="$PROJECT_DIR$/spec/models/place_spec.rb" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/minimum_spanning_trees.js" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/bootstrap_and_overrides.css.less" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/views/minimum_spanning_trees/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/views/minimum_spanning_trees/show.html.erb" />
         <option value="$PROJECT_DIR$/app/classes/google_matrix_parser_service.rb" />
         <option value="$PROJECT_DIR$/spec/classes/min_heap_spec.rb" />
-        <option value="$PROJECT_DIR$/app/classes/edge.rb" />
         <option value="$PROJECT_DIR$/config/application.rb" />
         <option value="$PROJECT_DIR$/lib/graph_module.rb" />
         <option value="$PROJECT_DIR$/app/classes/mst_edge.rb" />
-        <option value="$PROJECT_DIR$/app/classes/graph_builder.rb" />
         <option value="$PROJECT_DIR$/app/models/minimum_spanning_tree.rb" />
         <option value="$PROJECT_DIR$/spec/views/minimum_spanning_trees/index.html.erb_spec.rb" />
         <option value="$PROJECT_DIR$/spec/views/minimum_spanning_trees/show.html.erb_spec.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20161126023823_add_index_to_places.rb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/_footer.html.erb" />
         <option value="$PROJECT_DIR$/app/views/minimum_spanning_trees/new.html.erb" />
         <option value="$PROJECT_DIR$/vendor/assets/stylesheets/marketing.css.scss" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/static_pages.scss" />
-        <option value="$PROJECT_DIR$/app/views/static_pages/home.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/minimum_spanning_trees_controller.rb" />
-        <option value="$PROJECT_DIR$/app/classes/google_matrix_api_client.rb" />
-        <option value="$PROJECT_DIR$/app/classes/node.rb" />
         <option value="$PROJECT_DIR$/app/classes/graph.rb" />
         <option value="$PROJECT_DIR$/spec/classes/graph_spec.rb" />
-        <option value="$PROJECT_DIR$/app/classes/min_heap.rb" />
         <option value="$PROJECT_DIR$/app/classes/prim_minimum_spanning_tree.rb" />
+        <option value="$PROJECT_DIR$/app/views/layouts/_footer.html.erb" />
+        <option value="$PROJECT_DIR$/app/classes/graph_builder.rb" />
+        <option value="$PROJECT_DIR$/app/classes/node.rb" />
+        <option value="$PROJECT_DIR$/app/classes/edge.rb" />
+        <option value="$PROJECT_DIR$/app/classes/google_matrix_api_client.rb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/minimum_spanning_trees.js" />
+        <option value="$PROJECT_DIR$/app/classes/min_heap.rb" />
+        <option value="$PROJECT_DIR$/app/views/static_pages/home.html.erb" />
       </list>
     </option>
   </component>
@@ -226,7 +222,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="1280" />
     <option name="y" value="23" />
-    <option name="width" value="1280" />
+    <option name="width" value="1787" />
     <option name="height" value="737" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -879,18 +875,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1475351266272</updated>
-      <workItem from="1483320224390" duration="18193000" />
+      <workItem from="1483320224390" duration="20791000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18193000" />
+    <option name="totallyTimeSpent" value="20791000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1280" y="23" width="1280" height="737" extended-state="0" />
-    <editor active="false" />
+    <frame x="1280" y="23" width="1787" height="737" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26817447" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19025788" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1086,14 +1082,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/_footer.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="95" selection-start-line="4" selection-start-column="95" selection-end-line="4" selection-end-column="95" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/minimum_spanning_trees/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -1222,14 +1210,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/static_pages/home.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="103" selection-start-line="9" selection-start-column="103" selection-end-line="9" selection-end-column="103" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/places_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1246,42 +1226,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/classes/graph_builder.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-547">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/classes/edge.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/classes/node.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="3" selection-start-line="30" selection-start-column="3" selection-end-line="30" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/classes/google_matrix_api_client.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="33" column="9" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -1294,34 +1242,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/classes/graph.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spec/classes/graph_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="373">
           <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/classes/min_heap.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/classes/prim_minimum_spanning_tree.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1335">
-          <caret line="89" column="7" selection-start-line="89" selection-start-column="7" selection-end-line="89" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -1334,17 +1258,90 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/classes/graph_builder.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/classes/graph.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-622">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/classes/node.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/classes/edge.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/classes/google_matrix_api_client.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/minimum_spanning_trees.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="849">
-          <caret line="185" column="75" selection-start-line="185" selection-start-column="71" selection-end-line="185" selection-end-column="75" />
+        <state relative-caret-position="504">
+          <caret line="190" column="23" selection-start-line="190" selection-start-column="23" selection-end-line="190" selection-end-column="23" />
           <folding>
-            <marker date="1478475449000" expanded="true" signature="1012:1238" ph="..." />
-            <marker date="1478475449000" expanded="true" signature="4168:4384" ph="..." />
-            <marker date="1478475449000" expanded="true" signature="4173:4309" ph="..." />
-            <marker date="1478475449000" expanded="true" signature="4181:4220" ph="..." />
-            <marker date="1478475449000" expanded="true" signature="4253:4303" ph="..." />
+            <marker date="1483913147000" expanded="true" signature="1012:1238" ph="..." />
+            <marker date="1483913147000" expanded="true" signature="1127:1134" ph="×" />
+            <marker date="1483913147000" expanded="true" signature="4168:4384" ph="..." />
+            <marker date="1483913147000" expanded="true" signature="4173:4309" ph="..." />
+            <marker date="1483913147000" expanded="true" signature="4181:4220" ph="..." />
+            <marker date="1483913147000" expanded="true" signature="4253:4303" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/classes/min_heap.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="47" column="22" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/classes/prim_minimum_spanning_tree.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="95" column="7" selection-start-line="57" selection-start-column="4" selection-end-line="95" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/_footer.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="67" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/static_pages/home.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>

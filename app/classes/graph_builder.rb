@@ -9,5 +9,4 @@ class GraphBuilder
     return graph
   end
 
-
 end

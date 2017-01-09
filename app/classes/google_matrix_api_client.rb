@@ -3,7 +3,6 @@ class GoogleMatrixApiClient
   require 'rest-client'
   require 'json'
 
-
   def initialize
     @graph_builder = GraphBuilder.new
   end
@@ -32,6 +31,7 @@ class GoogleMatrixApiClient
 
         end
       end
+
     rescue SocketError => socketerror
       puts socketerror
       return socketerror

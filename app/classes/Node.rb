@@ -27,5 +27,4 @@ class Node
     @key <=> other.key
   end
 
-
 end
