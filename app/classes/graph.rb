@@ -69,9 +69,11 @@ class Graph
 
   def minimum_spanning_tree_edges(edges)
     mst_edges = []
-    edges.each do |edge|
-      mst_edge = MstEdge.new(edge.node1.node_data.name.to_s, edge.node2.node_data.name.to_s, edge.weight)
-      mst_edges << mst_edge
+    unless edges.nil?
+      edges.each do |edge|
+        mst_edge = MstEdge.new(edge.node1.node_data.name.to_s, edge.node2.node_data.name.to_s, edge.weight)
+        mst_edges << mst_edge
+      end
     end
     return mst_edges
   end
