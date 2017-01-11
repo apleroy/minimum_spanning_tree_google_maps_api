@@ -73,6 +73,7 @@ class MinimumSpanningTreesController < ApplicationController
         new_place_params = minimum_spanning_tree_params[:place_names]
         mst_places = @minimum_spanning_tree.places
 
+        # pass in a list of places, and the current place objects associated with this mst resource
         update_list_from_params(new_place_params, mst_places)
 
         format.html { redirect_to @minimum_spanning_tree, flash: { success: 'Minimum spanning tree was successfully updated.' } }
@@ -117,6 +118,8 @@ class MinimumSpanningTreesController < ApplicationController
     # accepts a list of place parameters and the current object list
     # updates and makes necessary deletions from a list in O(n)
     def update_list_from_params(new_params, current_object_list)
+
+      # create a hash of all places [k,v] = ['place name', place object]
       current_object_hash = current_object_list.map { |p| [p.name, p] }.to_h
 
       unless new_params.nil?
@@ -126,7 +129,8 @@ class MinimumSpanningTreesController < ApplicationController
             current_object_hash[param_name].update(name: param_name)
             current_object_hash.delete(param_name)
           else
-            current_object_hash.create(name: param_name)
+            # create the new object
+            current_object_list.create(name: param_name)
           end
         end
       end
