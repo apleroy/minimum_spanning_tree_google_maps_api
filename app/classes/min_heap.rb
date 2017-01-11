@@ -22,9 +22,12 @@ class MinHeap
   end
 
   def count
-    return @elements.count
+    return @elements.count - 1 # do not count the nil element at position[0]
   end
 
+  def elements
+    return @elements.drop(1) # make sure nil element is removed
+  end
 
   # get the minimum value from the heap
   def peek_min
@@ -58,17 +61,17 @@ class MinHeap
     element_position = @element_position_map[element.node_data]
 
     unless element_position.nil?
-      # exchange the minimum element with the last one in the list
+      # exchange the element with the last one in the list
       exchange(element_position, @elements.size - 1)
 
       # remove the last element
-      min_element = @elements.pop
-      @element_position_map.delete(min_element.node_data)
+      element_to_remove = @elements.pop
+      @element_position_map.delete(element_to_remove.node_data)
 
       # make sure the tree is ordered - call the helper method to sift down the new root node into appropriate position
       sift_down(element_position)
 
-      return min_element
+      return element_to_remove
     end
 
   end
@@ -78,7 +81,7 @@ class MinHeap
     puts 'printing min heap'
     @elements.each do |element|
       if element.nil?
-        puts  'nil'
+        puts 'nil'
       else
         puts element.node_data.to_s
       end

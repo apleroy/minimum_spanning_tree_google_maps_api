@@ -11,13 +11,11 @@ $( document ).ready(function() {
 
     $(document).on('click', ".delete-place", function() {
         var address = $(this).closest(".location-address").find(".address-input").text();
-        console.log(address);
+
         $(this).closest(".location-address").remove();
 
         $('input[name="minimum_spanning_tree[place_names][]"]').each(function(){
-            console.log($(this).val());
             if ($(this).val() == address) {
-                console.log("should remove");
                 $(this).remove();
             }
         });
@@ -144,7 +142,6 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay, origin, 
             var leg = response.routes[ 0 ].legs[ 0 ];
             markers.push(makeMarker( leg.start_location, map ));
             markers.push(makeMarker( leg.end_location, map ));
-            console.log(markers);
         } else {
             window.alert('Directions request failed due to ' + status);
         }
@@ -170,7 +167,6 @@ function plotEdges(map) {
 
         var node1 = $mst_edges[i].name1;
         var node2 = $mst_edges[i].name2;
-        console.log("node1: " + node1 + "   node2: " + node2);
 
         var directionsService = new google.maps.DirectionsService;
         var directionsDisplay = new google.maps.DirectionsRenderer({suppressMarkers: true});

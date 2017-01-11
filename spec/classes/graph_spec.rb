@@ -206,8 +206,6 @@ RSpec.describe Graph, type: :class do
       graph.add_undirected_edge(nodeC, nodeD, 1)
       graph.add_undirected_edge(nodeB, nodeD, 3)
 
-
-
       edge1 = Edge.new(nodeA, nodeB, 6)
       edge2 = Edge.new(nodeA, nodeC, 2)
       edge3 = Edge.new(nodeC, nodeD, 1)
